@@ -1,0 +1,1189 @@
+[INFO] [launch]: All log files can be found below /home/hotao/.ros/log/2026-08-15-15-20-23-943209-hotao-gbpu-126003
+[INFO] [launch]: Default logging verbosity is set to INFO
+[WARNING] [launch_ros.actions.node]: Parameter file path is not a file: /home/hotao/roboracer_ws/install/stack_master/share/stack_master/config/static_avoidance_planner.yaml
+[INFO] [gym_bridge-1]: process started with pid [126008]
+[INFO] [robot_state_publisher-2]: process started with pid [126010]
+[INFO] [robot_state_publisher-3]: process started with pid [126012]
+[INFO] [opponent_vehicle-4]: process started with pid [126014]
+[INFO] [opponent_controller-5]: process started with pid [126016]
+[INFO] [static_obstacle_manager-6]: process started with pid [126018]
+[INFO] [scan_overlay-7]: process started with pid [126020]
+[INFO] [tracking_merger-8]: process started with pid [126024]
+[INFO] [keyboard_joy_node.py-9]: process started with pid [126028]
+[INFO] [simple_mux_node.py-10]: process started with pid [126032]
+[INFO] [global_trajectory_publisher-11]: process started with pid [126042]
+[INFO] [sector_tuner-12]: process started with pid [126044]
+[INFO] [ot_interpolator-13]: process started with pid [126048]
+[INFO] [frenet_conversion_server_node-14]: process started with pid [126058]
+[INFO] [frenet_odom_republisher_node-15]: process started with pid [126060]
+[INFO] [lap_analyser-16]: process started with pid [126062]
+[INFO] [detect-17]: process started with pid [126064]
+[INFO] [tracking_node-18]: process started with pid [126066]
+[INFO] [state_machine-19]: process started with pid [126068]
+[INFO] [recovery_spliner_node-20]: process started with pid [126070]
+[INFO] [start_spline_node_v2-21]: process started with pid [126072]
+[INFO] [static_avoidance_node-22]: process started with pid [126088]
+[INFO] [change_avoidance_node-23]: process started with pid [126090]
+[INFO] [update_waypoints-24]: process started with pid [126092]
+[INFO] [opponent_trajectory-25]: process started with pid [126094]
+[INFO] [taskset-26]: process started with pid [126103]
+[INFO] [opp_prediction-27]: process started with pid [126105]
+[INFO] [controller_manager-28]: process started with pid [126107]
+[robot_state_publisher-2] 1786774824.402830 [1] robot_stat: wlp0s20f3: optional interface was not found.
+[robot_state_publisher-2] 1786774824.402833 [1] robot_stat: wlp9s0: optional interface was not found.
+[robot_state_publisher-2] 1786774824.402834 [1] robot_stat: wlP1p1s0: optional interface was not found.
+[robot_state_publisher-2] [INFO] [1786774824.407016825] [ego_robot_state_publisher]: Robot initialized
+[robot_state_publisher-3] 1786774824.418298 [1] robot_stat: wlp0s20f3: optional interface was not found.
+[robot_state_publisher-3] 1786774824.418304 [1] robot_stat: wlp9s0: optional interface was not found.
+[robot_state_publisher-3] 1786774824.418305 [1] robot_stat: wlP1p1s0: optional interface was not found.
+[robot_state_publisher-3] [INFO] [1786774824.432966707] [opp_robot_state_publisher]: Robot initialized
+[scan_overlay-7] 1786774824.696807 [1] scan_overl: wlp0s20f3: optional interface was not found.
+[scan_overlay-7] 1786774824.696815 [1] scan_overl: wlp9s0: optional interface was not found.
+[scan_overlay-7] 1786774824.696817 [1] scan_overl: wlP1p1s0: optional interface was not found.
+[opponent_vehicle-4] 1786774824.723960 [1] opponent_v: wlp0s20f3: optional interface was not found.
+[opponent_vehicle-4] 1786774824.723969 [1] opponent_v: wlp9s0: optional interface was not found.
+[opponent_vehicle-4] 1786774824.723970 [1] opponent_v: wlP1p1s0: optional interface was not found.
+[detect-17] 1786774824.744609 [1]     detect: wlp0s20f3: optional interface was not found.
+[detect-17] 1786774824.744622 [1]     detect: wlp9s0: optional interface was not found.
+[detect-17] 1786774824.744623 [1]     detect: wlP1p1s0: optional interface was not found.
+[scan_overlay-7] [INFO] [1786774824.744871199] [scan_overlay]: [scan_overlay] /scan_raw -> /scan (f110_msgs obstacles; passthrough until obstacles arrive)
+[lap_analyser-16] 1786774824.750629 [1] lap_analys: wlp0s20f3: optional interface was not found.
+[lap_analyser-16] 1786774824.750639 [1] lap_analys: wlp9s0: optional interface was not found.
+[lap_analyser-16] 1786774824.750640 [1] lap_analys: wlP1p1s0: optional interface was not found.
+[sector_tuner-12] 1786774824.754305 [1] sector_tun: wlp0s20f3: optional interface was not found.
+[sector_tuner-12] 1786774824.754312 [1] sector_tun: wlp9s0: optional interface was not found.
+[sector_tuner-12] 1786774824.754313 [1] sector_tun: wlP1p1s0: optional interface was not found.
+[detect-17] Try to open YAML file: /home/hotao/roboracer_ws/install/stack_master/share/stack_master/maps/0815test1/0815test1.yaml
+[detect-17] origin: -3.7271 -1.87553 0 
+[detect-17] resolution: 0.05
+[lap_analyser-16] [INFO] [1786774824.844936142] [lap_analyser]: Lap_analyser node started
+[opponent_vehicle-4] [INFO] [1786774824.896378660] [opponent_vehicle]: [opponent_vehicle] opp lidar map loaded from /home/hotao/roboracer_ws/install/stack_master/share/stack_master/maps/0815test1/0815test1.yaml
+[lap_analyser-16] [INFO] [1786774824.944937663] [lap_analyser]: lap_analyser data dir: /home/hotao/roboracer_ws/src/racing_stack/race_utils/f110_utils/nodes/lap_analyser/data
+[opponent_vehicle-4] [INFO] [1786774825.023184521] [opponent_vehicle]: [opponent_vehicle] up (has_opp=False). Spawn with RViz 2D Goal Pose.
+[static_obstacle_manager-6] 1786774825.047891 [1] static_obs: wlp0s20f3: optional interface was not found.
+[static_obstacle_manager-6] 1786774825.047901 [1] static_obs: wlp9s0: optional interface was not found.
+[static_obstacle_manager-6] 1786774825.047902 [1] static_obs: wlP1p1s0: optional interface was not found.
+[opponent_controller-5] 1786774825.080337 [1] opponent_c: wlp0s20f3: optional interface was not found.
+[opponent_controller-5] 1786774825.080348 [1] opponent_c: wlp9s0: optional interface was not found.
+[opponent_controller-5] 1786774825.080350 [1] opponent_c: wlP1p1s0: optional interface was not found.
+[static_obstacle_manager-6] [INFO] [1786774825.243478157] [static_obstacle_manager]: [static_obstacle_manager] RViz "Publish Point" to add; /sim/clear_obstacles to clear
+[keyboard_joy_node.py-9] 1786774825.351671 [1]    python3: wlp0s20f3: optional interface was not found.
+[keyboard_joy_node.py-9] 1786774825.351682 [1]    python3: wlp9s0: optional interface was not found.
+[keyboard_joy_node.py-9] 1786774825.351683 [1]    python3: wlP1p1s0: optional interface was not found.
+[taskset-26] 1786774825.376114 [1]    python3: wlp0s20f3: optional interface was not found.
+[taskset-26] 1786774825.376124 [1]    python3: wlp9s0: optional interface was not found.
+[taskset-26] 1786774825.376125 [1]    python3: wlP1p1s0: optional interface was not found.
+[simple_mux_node.py-10] 1786774825.462046 [1]    python3: wlp0s20f3: optional interface was not found.
+[simple_mux_node.py-10] 1786774825.462060 [1]    python3: wlp9s0: optional interface was not found.
+[simple_mux_node.py-10] 1786774825.462061 [1]    python3: wlP1p1s0: optional interface was not found.
+[sector_tuner-12] [INFO] [1786774825.469785937] [speed_sector_tuner]: Waiting for global waypoints...
+[recovery_spliner_node-20] 1786774825.597902 [1] recovery_s: wlp0s20f3: optional interface was not found.
+[recovery_spliner_node-20] 1786774825.597911 [1] recovery_s: wlp9s0: optional interface was not found.
+[recovery_spliner_node-20] 1786774825.597912 [1] recovery_s: wlP1p1s0: optional interface was not found.
+[ot_interpolator-13] 1786774825.693263 [1] ot_interpo: wlp0s20f3: optional interface was not found.
+[ot_interpolator-13] 1786774825.693271 [1] ot_interpo: wlp9s0: optional interface was not found.
+[ot_interpolator-13] 1786774825.693272 [1] ot_interpo: wlP1p1s0: optional interface was not found.
+[frenet_odom_republisher_node-15] 1786774825.732999 [1] frenet_odo: wlp0s20f3: optional interface was not found.
+[frenet_odom_republisher_node-15] 1786774825.733422 [1] frenet_odo: wlp9s0: optional interface was not found.
+[ot_interpolator-13] [INFO] [1786774825.733512231] [ot_sector_tuner]: {'save_params': False, 'n_sectors': 1, 'yeet_factor': 1.25, 'spline_len': 30, 'ot_sector_begin': 0.5, 'Overtaking_sector0': {'start': 0, 'end': 226, 'ot_flag': False}, 'save_yaml_path': '/home/hotao/roboracer_ws/install/stack_master/share/stack_master/maps/0815test1/ot_sectors.yaml', 'use_sim_time': False, 'start_type_description_service': True}
+[frenet_odom_republisher_node-15] 1786774825.734050 [1] frenet_odo: wlP1p1s0: optional interface was not found.
+[ot_interpolator-13] [INFO] [1786774825.757461546] [ot_sector_tuner]: Waiting on first messages from global waypoints topics (og, scaled, and shortest path).
+[static_avoidance_node-22] 1786774825.766135 [1] static_avo: wlp0s20f3: optional interface was not found.
+[static_avoidance_node-22] 1786774825.766412 [1] static_avo: wlp9s0: optional interface was not found.
+[static_avoidance_node-22] 1786774825.766415 [1] static_avo: wlP1p1s0: optional interface was not found.
+[recovery_spliner_node-20] [INFO] [1786774825.786410407] [recovery_spliner_node]: [recovery_spliner_node] Waiting for messages and services...
+[static_avoidance_node-22] [INFO] [1786774825.827312093] [static_avoidance_planner]: [static_avoidance_planner] debug log: /home/hotao/roboracer_debug_logs/static_avoidance_20260815_152025.log (latest: /home/hotao/roboracer_debug_logs/latest_static_avoidance.log)
+[static_avoidance_node-22] [INFO] [1786774825.846920064] [static_avoidance_planner]: Subscribing to map topic: /map
+[opp_prediction-27] 1786774825.853668 [1]    python3: wlp0s20f3: optional interface was not found.
+[opp_prediction-27] 1786774825.853677 [1]    python3: wlp9s0: optional interface was not found.
+[opp_prediction-27] 1786774825.853678 [1]    python3: wlP1p1s0: optional interface was not found.
+[INFO] [rviz2-29]: process started with pid [126575]
+[update_waypoints-24] 1786774825.918337 [1] update_way: wlp0s20f3: optional interface was not found.
+[update_waypoints-24] 1786774825.918350 [1] update_way: wlp9s0: optional interface was not found.
+[update_waypoints-24] 1786774825.918352 [1] update_way: wlP1p1s0: optional interface was not found.
+[static_avoidance_node-22] [INFO] [1786774825.923328364] [static_avoidance_planner]: Map image not initialized.
+[rviz2-29] Warning: Ignoring XDG_SESSION_TYPE=wayland on Gnome. Use QT_QPA_PLATFORM=wayland to run on Wayland anyway.
+[static_avoidance_node-22] [INFO] [1786774826.040251224] [static_avoidance_planner]: [static_avoidance_planner] Waiting for messages and services...
+[rviz2-29] 1786774826.121613 [1]      rviz2: wlp0s20f3: optional interface was not found.
+[rviz2-29] 1786774826.121622 [1]      rviz2: wlp9s0: optional interface was not found.
+[rviz2-29] 1786774826.121624 [1]      rviz2: wlP1p1s0: optional interface was not found.
+[update_waypoints-24] [INFO] [1786774826.159129357] [waypoint_updater]: [Update Wpnts] Update Wpnts wating...
+[global_trajectory_publisher-11] 1786774826.166841 [1] global_tra: wlp0s20f3: optional interface was not found.
+[global_trajectory_publisher-11] 1786774826.167306 [1] global_tra: wlp9s0: optional interface was not found.
+[global_trajectory_publisher-11] 1786774826.167349 [1] global_tra: wlP1p1s0: optional interface was not found.
+[opp_prediction-27] [INFO] [1786774826.175349615] [opponent_propagation_predictor]: [Opp. Pred.] Opponent Predictor waiting...
+[global_trajectory_publisher-11] [INFO] [1786774826.290016324] [global_republisher]: Reading parameters from 0815test1
+[tracking_merger-8] 1786774826.349497 [1] tracking_m: wlp0s20f3: optional interface was not found.
+[tracking_merger-8] 1786774826.349510 [1] tracking_m: wlp9s0: optional interface was not found.
+[tracking_merger-8] 1786774826.349511 [1] tracking_m: wlP1p1s0: optional interface was not found.
+[opponent_controller-5] [INFO] [1786774826.392738496] [opponent_controller]: [OpponentController] loaded racing line (226 pts) from 0815test1/global_waypoints.json via gb_optimizer reader
+[opponent_controller-5] [INFO] [1786774826.404827319] [opponent_controller]: [OpponentController] up (mode=manual, max_speed=2.0). Pick Path/FTG from the RViz Sim Control panel.
+[tracking_merger-8] [INFO] [1786774826.461444961] [tracking_merger]: [tracking_merger] /tracking/obstacles_raw + virtual -> /tracking/obstacles
+[rviz2-29] [INFO] [1786774826.527042235] [rviz2]: Stereo is NOT SUPPORTED
+[rviz2-29] [INFO] [1786774826.527096969] [rviz2]: OpenGl version: 4.6 (GLSL 4.6)
+[tracking_node-18] 1786774826.537803 [1]    python3: wlp0s20f3: optional interface was not found.
+[tracking_node-18] 1786774826.537813 [1]    python3: wlp9s0: optional interface was not found.
+[tracking_node-18] 1786774826.537815 [1]    python3: wlP1p1s0: optional interface was not found.
+[opponent_trajectory-25] 1786774826.579097 [1]    python3: wlp0s20f3: optional interface was not found.
+[opponent_trajectory-25] 1786774826.579718 [1]    python3: wlp9s0: optional interface was not found.
+[opponent_trajectory-25] 1786774826.579727 [1]    python3: wlP1p1s0: optional interface was not found.
+[frenet_conversion_server_node-14] 1786774826.582622 [1] frenet_con: wlp0s20f3: optional interface was not found.
+[frenet_conversion_server_node-14] 1786774826.582633 [1] frenet_con: wlp9s0: optional interface was not found.
+[frenet_conversion_server_node-14] 1786774826.582635 [1] frenet_con: wlP1p1s0: optional interface was not found.
+[rviz2-29] [INFO] [1786774826.597723260] [rviz2]: Stereo is NOT SUPPORTED
+[state_machine-19] 1786774826.655365 [1] state_mach: wlp0s20f3: optional interface was not found.
+[state_machine-19] 1786774826.655374 [1] state_mach: wlp9s0: optional interface was not found.
+[state_machine-19] 1786774826.655375 [1] state_mach: wlP1p1s0: optional interface was not found.
+[tracking_node-18] [INFO] [1786774826.668101008] [tracking]: [Opponent Tracking]: Waiting for global wpnts...
+[frenet_conversion_server_node-14] [INFO] [1786774826.738268471] [frenet_conversion_server_node]: [Frenet Conversion] PERCEPTION ONLY: 0
+[frenet_conversion_server_node-14] [INFO] [1786774826.741640574] [frenet_conversion_server_node]: [Frenet Conversion] Waiting for global waypoints...
+[frenet_conversion_server_node-14] [INFO] [1786774826.741900000] [frenet_conversion_server_node]: [Frenet Conversion] Frenet Conversion Server ready.
+[start_spline_node_v2-21] 1786774826.755556 [1] start_spli: wlp0s20f3: optional interface was not found.
+[start_spline_node_v2-21] 1786774826.755565 [1] start_spli: wlp9s0: optional interface was not found.
+[start_spline_node_v2-21] 1786774826.755567 [1] start_spli: wlP1p1s0: optional interface was not found.
+[rviz2-29] [INFO] [1786774826.772654607] [rviz]: Connected on namespace: /obstacle_controls
+[scan_overlay-7] [WARN] [1786774826.810894333] [scan_overlay]: New subscription discovered on topic '/scan', requesting incompatible QoS. No messages will be sent to it. Last incompatible policy: RELIABILITY
+[start_spline_node_v2-21] [INFO] [1786774826.814751511] [start_planner]: Subscribing to map topic: /map
+[start_spline_node_v2-21] [INFO] [1786774826.818213328] [start_planner]: Map image not initialized.
+[start_spline_node_v2-21] [INFO] [1786774826.836896256] [start_planner]: [start_spliner_node] Waiting for messages and services...
+[state_machine-19] [INFO] [1786774826.888282684] [state_machine]: [state_machine] debug log: /home/hotao/roboracer_debug_logs/state_machine_20260815_152026.log (latest: /home/hotao/roboracer_debug_logs/latest_state_machine.log)
+[state_machine-19] [INFO] [1786774826.899455366] [state_machine]: Waiting for message on /car_state/odom
+[gym_bridge-1] 1786774826.911507 [1] gym_bridge: wlp0s20f3: optional interface was not found.
+[gym_bridge-1] 1786774826.911513 [1] gym_bridge: wlp9s0: optional interface was not found.
+[gym_bridge-1] 1786774826.911514 [1] gym_bridge: wlP1p1s0: optional interface was not found.
+[controller_manager-28] 1786774826.930631 [1] controller: wlp0s20f3: optional interface was not found.
+[controller_manager-28] 1786774826.930641 [1] controller: wlp9s0: optional interface was not found.
+[controller_manager-28] 1786774826.930643 [1] controller: wlP1p1s0: optional interface was not found.
+[gym_bridge-1] /home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/gymnasium/envs/registration.py:481: UserWarning: [33mWARN: The environment creator metadata doesn't include `render_modes`, contains: ['render.modes'][0m
+[gym_bridge-1]   logger.warn(
+[gym_bridge-1] /home/hotao/roboracer_ws/src/racing_stack/race_utils/unicorn_gym/f1tenth_gym/gym/f110_gym/envs/base_classes.py:93: UserWarning: Chosen integrator is RK4. This is different from previous versions of the gym.
+[gym_bridge-1]   warnings.warn(f"Chosen integrator is RK4. This is different from previous versions of the gym.")
+[controller_manager-28] [INFO] [1786774827.070654007] [controller_manager]: [controller_manager] up; waiting for /global_waypoints + state...
+[gym_bridge-1] [INFO] [1786774827.201611360] [bridge]: [GymBridge] Base map loaded: (144, 294), res=0.05
+[gym_bridge-1] [INFO] [1786774827.205959969] [bridge]: [GymBridge] raycaster 'rm' built; obstacles+opponent via OVERLAY post-process, no DT rebuild
+[gym_bridge-1] [INFO] [1786774827.210891123] [bridge]: [GymBridge] Initial /map published
+[static_avoidance_node-22] [INFO] [1786774827.211373157] [static_avoidance_planner]: Map image initialized.
+[start_spline_node_v2-21] [INFO] [1786774827.211868408] [start_planner]: Map image initialized.
+[rviz2-29] [INFO] [1786774827.223665120] [rviz2]: Trying to create a map of size 294 x 144 using 1 swatches
+[lap_analyser-16] [WARN] [1786774827.240141451] [lap_analyser]: frenet cb waiting for gb wpnts...
+[rviz2-29] [ERROR] [1786774827.257174838] [rviz2]: rviz/glsl120/indexed_8bit_image.vert
+[rviz2-29] rviz/glsl120/indexed_8bit_image.frag
+[rviz2-29]  GLSL link result : 
+[rviz2-29] active samplers with a different type refer to the same texture image unit
+[change_avoidance_node-23] 1786774827.466575 [1] change_avo: wlp0s20f3: optional interface was not found.
+[change_avoidance_node-23] 1786774827.466582 [1] change_avo: wlp9s0: optional interface was not found.
+[change_avoidance_node-23] 1786774827.466584 [1] change_avo: wlP1p1s0: optional interface was not found.
+[lap_analyser-16] [WARN] [1786774827.821933121] [lap_analyser]: frenet cb waiting for gb wpnts...
+[state_machine-19] [INFO] [1786774827.907563995] [state_machine]: Waiting for message on /global_waypoints_scaled
+[lap_analyser-16] [WARN] [1786774828.481319382] [lap_analyser]: frenet cb waiting for gb wpnts...
+[frenet_conversion_server_node-14] [INFO] [1786774828.590054186] [frenet_conversion_server_node]: Global waypoints received.
+[controller_manager-28] [INFO] [1786774828.593140082] [controller_manager]: [controller_manager] initialized FrenetConverter + Controller. Ready!
+[opponent_trajectory-25] [INFO] [1786774828.652127307] [OpponentHalflap]: [Tracking] initialized FrenetConverter object
+[change_avoidance_node-23] [INFO] [1786774828.664096052] [planner_change]: [Spliner] initialized FrenetConverter object
+[change_avoidance_node-23] [INFO] [1786774828.664393837] [planner_change]: Subscribing to map topic: /map
+[change_avoidance_node-23] [INFO] [1786774828.665870221] [planner_change]: Map image not initialized.
+[taskset-26] [INFO] [1786774828.668291723] [GP_trajectory]: [Tracking] initialized FrenetConverter object
+[change_avoidance_node-23] [INFO] [1786774828.674406025] [planner_change]: [Planner] outer/inner lanes swapped to match frenet +d=left convention
+[change_avoidance_node-23] [INFO] [1786774828.676100756] [planner_change]: [OBS Spliner] Waiting for messages and services...
+[state_machine-19] [INFO] [1786774828.957455112] [state_machine]: Waiting for message on /global_waypoints_scaled
+[tracking_node-18] [INFO] [1786774829.036175475] [tracking]: [Tracking] received global path
+[tracking_node-18] [INFO] [1786774829.037245649] [tracking]: [Tracking] initialized FrenetConverter object
+[tracking_node-18] [INFO] [1786774829.037451940] [tracking]: [Opponent Tracking]: Ready!
+[update_waypoints-24] [INFO] [1786774829.038883186] [waypoint_updater]: [Update Wptns] Update Wpnts ready!
+[ot_interpolator-13] [INFO] [1786774829.257778483] [ot_sector_tuner]: All messages received at least once!
+[ot_interpolator-13] [INFO] [1786774829.260728678] [ot_sector_tuner]: [OT Interpolator] initialized FrenetConverter object
+[ot_interpolator-13] [INFO] [1786774829.261519259] [ot_sector_tuner]: Entering main loop!
+[lap_analyser-16] [INFO] [1786774829.663554556] [lap_analyser]: LapAnalyser: started first lap
+[ot_interpolator-13] 0it [00:00, ?it/s]226it [00:00, 2846584.70it/s]
+[state_machine-19] [INFO] [1786774829.830533146] [state_machine]: [state_machine] Splinified Overtaking Curve
+[change_avoidance_node-23] [INFO] [1786774829.871101756] [planner_change]: [OBS Spliner] Ready!
+[lap_analyser-16] [INFO] [1786774829.871361267] [lap_analyser]: LapAnalyser will be centered at 6.405629283964482, 0.4384773435785137, 1.5
+[opp_prediction-27] [INFO] [1786774830.043477640] [opponent_propagation_predictor]: [Opp. Pred.] Updated waypoints received!
+[start_spline_node_v2-21] [INFO] [1786774830.220740425] [start_planner]: [start_spliner_node] Ready!
+[start_spline_node_v2-21] [INFO] [1786774830.223614931] [start_planner]: [start_spliner_node] initialized FrenetConverter object
+[recovery_spliner_node-20] [INFO] [1786774830.583067770] [recovery_spliner_node]: [recovery_spliner_node] All required messages received.
+[static_avoidance_node-22] [INFO] [1786774830.583350000] [static_avoidance_planner]: [static_avoidance_planner] Ready!
+[controller_manager-28] [INFO] [1786774830.585431312] [controller_manager]: steering angle clipped
+[static_avoidance_node-22] [INFO] [1786774830.586146260] [static_avoidance_planner]: [static_avoidance_planner] initialized FrenetConverter object
+[recovery_spliner_node-20] [INFO] [1786774830.586302307] [recovery_spliner_node]: [recovery_spliner_node] initialized FrenetConverter object
+[recovery_spliner_node-20] [INFO] [1786774830.588282659] [recovery_spliner_node]: Subscribing to map topic: /map
+[recovery_spliner_node-20] [INFO] [1786774830.589393324] [recovery_spliner_node]: Map image not initialized.
+[recovery_spliner_node-20] [INFO] [1786774830.589914426] [recovery_spliner_node]: [recovery_spliner_node] Ready!
+[change_avoidance_node-23] [INFO] [1786774830.588694853] [planner_change]: Map image initialized.
+[recovery_spliner_node-20] [INFO] [1786774830.600363498] [recovery_spliner_node]: Map image initialized.
+[controller_manager-28] [INFO] [1786774830.605714451] [controller_manager]: steering angle clipped
+[recovery_spliner_node-20] [INFO] [1786774830.617786643] [recovery_spliner_node]: [recovery_spliner_node]: Evasion trajectory too close to TRACKBOUNDS, aborting evasion
+[static_avoidance_node-22] [INFO] [1786774830.636930938] [static_avoidance_planner]: [STATIC_AVOID] obs_id=- obs_dist=-m obs_s=- ego_s=15.15 side=-
+[static_avoidance_node-22]   left_clearance=- right_clearance=- candidate_valid=false rung=-
+[static_avoidance_node-22]   cache_used=false path_age=- path_points=0 planning_time_ms=0.1
+[static_avoidance_node-22]   reason=no_static_obstacle_in_range
+[static_avoidance_node-22]   cache_reason=no_cache
+[lap_analyser-16] [INFO] [1786774830.650323719] [lap_analyser]: LapAnalyser: completed lap #1 in 0.986672145
+[controller_manager-28] [ERROR] [1786774830.825345923] [controller_manager]: [controller_manager] Received no local wpnts. STOPPING!!
+[controller_manager-28] [INFO] [1786774830.884668960] [controller_manager]: steering angle clipped
+[controller_manager-28] [INFO] [1786774830.904545038] [controller_manager]: steering angle clipped
+[controller_manager-28] [INFO] [1786774830.925434118] [controller_manager]: steering angle clipped
+[controller_manager-28] [INFO] [1786774830.945703941] [controller_manager]: steering angle clipped
+[controller_manager-28] [INFO] [1786774830.964903290] [controller_manager]: steering angle clipped
+[controller_manager-28] [INFO] [1786774830.985046881] [controller_manager]: steering angle clipped
+[controller_manager-28] [INFO] [1786774831.005296167] [controller_manager]: steering angle clipped
+[controller_manager-28] [INFO] [1786774831.024883189] [controller_manager]: steering angle clipped
+[lap_analyser-16] [INFO] [1786774831.026966979] [lap_analyser]: LapAnalyser: completed lap #2 in 0.369370669
+[controller_manager-28] [INFO] [1786774831.044869650] [controller_manager]: steering angle clipped
+[controller_manager-28] [INFO] [1786774831.065389824] [controller_manager]: steering angle clipped
+[controller_manager-28] [INFO] [1786774831.085976239] [controller_manager]: steering angle clipped
+[static_avoidance_node-22] [INFO] [1786774831.137015915] [static_avoidance_planner]: [STATIC_AVOID] obs_id=- obs_dist=-m obs_s=- ego_s=15.15 side=-
+[static_avoidance_node-22]   left_clearance=- right_clearance=- candidate_valid=false rung=-
+[static_avoidance_node-22]   cache_used=false path_age=- path_points=0 planning_time_ms=0.1
+[static_avoidance_node-22]   reason=no_static_obstacle_in_range
+[static_avoidance_node-22]   cache_reason=no_cache
+[controller_manager-28] [ERROR] [1786774831.346053935] [controller_manager]: [controller_manager] Received no local wpnts. STOPPING!!
+[lap_analyser-16] [INFO] [1786774831.439226804] [lap_analyser]: LapAnalyser: completed lap #3 in 0.409786887
+[static_avoidance_node-22] [INFO] [1786774831.686980789] [static_avoidance_planner]: [STATIC_AVOID] obs_id=- obs_dist=-m obs_s=- ego_s=15.15 side=-
+[static_avoidance_node-22]   left_clearance=- right_clearance=- candidate_valid=false rung=-
+[static_avoidance_node-22]   cache_used=false path_age=- path_points=0 planning_time_ms=0.1
+[static_avoidance_node-22]   reason=no_static_obstacle_in_range
+[static_avoidance_node-22]   cache_reason=no_cache
+[controller_manager-28] [ERROR] [1786774831.846070668] [controller_manager]: [controller_manager] Received no local wpnts. STOPPING!!
+[static_avoidance_node-22] [INFO] [1786774832.186983725] [static_avoidance_planner]: [STATIC_AVOID] obs_id=- obs_dist=-m obs_s=- ego_s=15.15 side=-
+[static_avoidance_node-22]   left_clearance=- right_clearance=- candidate_valid=false rung=-
+[static_avoidance_node-22]   cache_used=false path_age=- path_points=0 planning_time_ms=0.1
+[static_avoidance_node-22]   reason=no_static_obstacle_in_range
+[static_avoidance_node-22]   cache_reason=no_cache
+[lap_analyser-16] [INFO] [1786774832.202398496] [lap_analyser]: LapAnalyser: completed lap #4 in 0.762175171
+[controller_manager-28] [ERROR] [1786774832.347474591] [controller_manager]: [controller_manager] Received no local wpnts. STOPPING!!
+[lap_analyser-16] [INFO] [1786774832.470052373] [lap_analyser]: LapAnalyser: completed lap #5 in 0.266342626
+[recovery_spliner_node-20] [INFO] [1786774832.641242265] [recovery_spliner_node]: [recovery_spliner_node]: Evasion trajectory too close to TRACKBOUNDS, aborting evasion
+[static_avoidance_node-22] [INFO] [1786774832.686993924] [static_avoidance_planner]: [STATIC_AVOID] obs_id=- obs_dist=-m obs_s=- ego_s=15.15 side=-
+[static_avoidance_node-22]   left_clearance=- right_clearance=- candidate_valid=false rung=-
+[static_avoidance_node-22]   cache_used=false path_age=- path_points=0 planning_time_ms=0.1
+[static_avoidance_node-22]   reason=no_static_obstacle_in_range
+[static_avoidance_node-22]   cache_reason=no_cache
+[controller_manager-28] [ERROR] [1786774833.114581827] [controller_manager]: [controller_manager] Received no local wpnts. STOPPING!!
+[static_avoidance_node-22] [INFO] [1786774833.236881742] [static_avoidance_planner]: [STATIC_AVOID] obs_id=- obs_dist=-m obs_s=- ego_s=15.15 side=-
+[static_avoidance_node-22]   left_clearance=- right_clearance=- candidate_valid=false rung=-
+[static_avoidance_node-22]   cache_used=false path_age=- path_points=0 planning_time_ms=0.1
+[static_avoidance_node-22]   reason=no_static_obstacle_in_range
+[static_avoidance_node-22]   cache_reason=no_cache
+[lap_analyser-16] [INFO] [1786774833.498368728] [lap_analyser]: LapAnalyser: completed lap #6 in 1.026250004
+[static_avoidance_node-22] [INFO] [1786774833.736989718] [static_avoidance_planner]: [STATIC_AVOID] obs_id=- obs_dist=-m obs_s=- ego_s=15.15 side=-
+[static_avoidance_node-22]   left_clearance=- right_clearance=- candidate_valid=false rung=-
+[static_avoidance_node-22]   cache_used=false path_age=- path_points=0 planning_time_ms=0.1
+[static_avoidance_node-22]   reason=no_static_obstacle_in_range
+[static_avoidance_node-22]   cache_reason=no_cache
+[lap_analyser-16] [INFO] [1786774833.795358627] [lap_analyser]: LapAnalyser: completed lap #7 in 0.295958787
+[controller_manager-28] [ERROR] [1786774834.065755832] [controller_manager]: [controller_manager] Received no local wpnts. STOPPING!!
+[rviz2-29] [INFO] [1786774834.263313746] [rviz]: Message Filter dropping message: frame 'base_link' at time 1786774833.927 for reason 'discarding message because the queue is full'
+[static_avoidance_node-22] [INFO] [1786774834.286787684] [static_avoidance_planner]: [STATIC_AVOID] obs_id=- obs_dist=-m obs_s=- ego_s=11.53 side=-
+[static_avoidance_node-22]   left_clearance=- right_clearance=- candidate_valid=false rung=-
+[static_avoidance_node-22]   cache_used=false path_age=- path_points=0 planning_time_ms=0.0
+[static_avoidance_node-22]   reason=no_static_obstacle_in_range
+[static_avoidance_node-22]   cache_reason=no_cache
+[lap_analyser-16] [INFO] [1786774834.596051492] [lap_analyser]: LapAnalyser: completed lap #8 in 0.798141649
+[recovery_spliner_node-20] [INFO] [1786774834.666520398] [recovery_spliner_node]: [recovery_spliner_node]: Evasion trajectory too close to TRACKBOUNDS, aborting evasion
+[static_avoidance_node-22] [INFO] [1786774834.786972243] [static_avoidance_planner]: [STATIC_AVOID] obs_id=- obs_dist=-m obs_s=- ego_s=11.53 side=-
+[static_avoidance_node-22]   left_clearance=- right_clearance=- candidate_valid=false rung=-
+[static_avoidance_node-22]   cache_used=false path_age=- path_points=0 planning_time_ms=0.1
+[static_avoidance_node-22]   reason=no_static_obstacle_in_range
+[static_avoidance_node-22]   cache_reason=no_cache
+[controller_manager-28] [ERROR] [1786774834.853178992] [controller_manager]: [controller_manager] Received no local wpnts. STOPPING!!
+[lap_analyser-16] [INFO] [1786774835.210958226] [lap_analyser]: LapAnalyser: completed lap #9 in 0.60846744
+[lap_analyser-16] [INFO] [1786774835.260706295] [lap_analyser]: LapAnalyser: completed lap #10 in 0.046574868
+[lap_analyser-16] [WARN] [1786774835.271624144] [lap_analyser]: Lap time over the past 10 laps: Mean: 0.5570, Std: 0.3127
+[lap_analyser-16] [WARN] [1786774835.272055059] [lap_analyser]: Avg Lat Error over the past 10 laps: Mean: 0.7219, Std: 0.1178
+[lap_analyser-16] [WARN] [1786774835.272418781] [lap_analyser]: Max Lat Error over the past 10 laps: Mean: 0.9098, Std: 0.0000
+[static_avoidance_node-22] [INFO] [1786774835.337023830] [static_avoidance_planner]: [STATIC_AVOID] obs_id=- obs_dist=-m obs_s=- ego_s=15.15 side=-
+[static_avoidance_node-22]   left_clearance=- right_clearance=- candidate_valid=false rung=-
+[static_avoidance_node-22]   cache_used=false path_age=- path_points=0 planning_time_ms=0.1
+[static_avoidance_node-22]   reason=no_static_obstacle_in_range
+[static_avoidance_node-22]   cache_reason=no_cache
+[controller_manager-28] [ERROR] [1786774835.385215386] [controller_manager]: [controller_manager] Received no local wpnts. STOPPING!!
+[lap_analyser-16] [INFO] [1786774835.470552784] [lap_analyser]: LapAnalyser: completed lap #11 in 0.201739301
+[static_avoidance_node-22] [INFO] [1786774835.837022686] [static_avoidance_planner]: [STATIC_AVOID] obs_id=- obs_dist=-m obs_s=- ego_s=15.15 side=-
+[static_avoidance_node-22]   left_clearance=- right_clearance=- candidate_valid=false rung=-
+[static_avoidance_node-22]   cache_used=false path_age=- path_points=0 planning_time_ms=0.0
+[static_avoidance_node-22]   reason=no_static_obstacle_in_range
+[static_avoidance_node-22]   cache_reason=no_cache
+[static_avoidance_node-22] [INFO] [1786774836.337155233] [static_avoidance_planner]: [STATIC_AVOID] obs_id=- obs_dist=-m obs_s=- ego_s=15.15 side=-
+[static_avoidance_node-22]   left_clearance=- right_clearance=- candidate_valid=false rung=-
+[static_avoidance_node-22]   cache_used=false path_age=- path_points=0 planning_time_ms=0.1
+[static_avoidance_node-22]   reason=no_static_obstacle_in_range
+[static_avoidance_node-22]   cache_reason=no_cache
+[lap_analyser-16] [INFO] [1786774836.627892413] [lap_analyser]: LapAnalyser: completed lap #12 in 1.155445363
+[static_avoidance_node-22] [INFO] [1786774836.888088891] [static_avoidance_planner]: [STATIC_AVOID] obs_id=- obs_dist=-m obs_s=- ego_s=11.53 side=-
+[static_avoidance_node-22]   left_clearance=- right_clearance=- candidate_valid=false rung=-
+[static_avoidance_node-22]   cache_used=false path_age=- path_points=0 planning_time_ms=0.5
+[static_avoidance_node-22]   reason=no_static_obstacle_in_range
+[static_avoidance_node-22]   cache_reason=no_cache
+[controller_manager-28] [INFO] [1786774837.145265451] [controller_manager]: steering angle clipped
+[controller_manager-28] [INFO] [1786774837.165312165] [controller_manager]: steering angle clipped
+[controller_manager-28] [INFO] [1786774837.184879449] [controller_manager]: steering angle clipped
+[controller_manager-28] [INFO] [1786774837.205833238] [controller_manager]: steering angle clipped
+[rviz2-29] [INFO] [1786774837.207772252] [rviz]: Message Filter dropping message: frame 'base_link' at time 1786774836.225 for reason 'discarding message because the queue is full'
+[static_avoidance_node-22] [INFO] [1786774837.437023577] [static_avoidance_planner]: [STATIC_AVOID] obs_id=- obs_dist=-m obs_s=- ego_s=11.53 side=-
+[static_avoidance_node-22]   left_clearance=- right_clearance=- candidate_valid=false rung=-
+[static_avoidance_node-22]   cache_used=false path_age=- path_points=0 planning_time_ms=0.1
+[static_avoidance_node-22]   reason=no_static_obstacle_in_range
+[static_avoidance_node-22]   cache_reason=no_cache
+[controller_manager-28] [INFO] [1786774837.733512653] [controller_manager]: steering angle clipped
+[controller_manager-28] [INFO] [1786774837.744979897] [controller_manager]: steering angle clipped
+[controller_manager-28] [INFO] [1786774837.764769468] [controller_manager]: steering angle clipped
+[controller_manager-28] [INFO] [1786774837.785419264] [controller_manager]: steering angle clipped
+[lap_analyser-16] [INFO] [1786774837.796867820] [lap_analyser]: LapAnalyser: completed lap #13 in 1.167348007
+[controller_manager-28] [INFO] [1786774837.806763885] [controller_manager]: steering angle clipped
+[recovery_spliner_node-20] [INFO] [1786774837.866098080] [recovery_spliner_node]: [recovery_spliner_node]: Evasion trajectory too close to TRACKBOUNDS, aborting evasion
+[lap_analyser-16] [INFO] [1786774837.962632169] [lap_analyser]: LapAnalyser: completed lap #14 in 0.163966071
+[static_avoidance_node-22] [INFO] [1786774837.986916161] [static_avoidance_planner]: [STATIC_AVOID] obs_id=- obs_dist=-m obs_s=- ego_s=15.15 side=-
+[static_avoidance_node-22]   left_clearance=- right_clearance=- candidate_valid=false rung=-
+[static_avoidance_node-22]   cache_used=false path_age=- path_points=0 planning_time_ms=0.1
+[static_avoidance_node-22]   reason=no_static_obstacle_in_range
+[static_avoidance_node-22]   cache_reason=no_cache
+[lap_analyser-16] [INFO] [1786774837.998700442] [lap_analyser]: LapAnalyser: completed lap #15 in 0.034792222
+[lap_analyser-16] [INFO] [1786774838.134897477] [lap_analyser]: LapAnalyser: completed lap #16 in 0.134921647
+[lap_analyser-16] [INFO] [1786774838.155171604] [lap_analyser]: LapAnalyser: completed lap #17 in 0.015122282
+[controller_manager-28] [ERROR] [1786774838.164804282] [controller_manager]: [controller_manager] Received no local wpnts. STOPPING!!
+[static_avoidance_node-22] [INFO] [1786774838.486948258] [static_avoidance_planner]: [STATIC_AVOID] obs_id=- obs_dist=-m obs_s=- ego_s=11.53 side=-
+[static_avoidance_node-22]   left_clearance=- right_clearance=- candidate_valid=false rung=-
+[static_avoidance_node-22]   cache_used=false path_age=- path_points=0 planning_time_ms=0.1
+[static_avoidance_node-22]   reason=no_static_obstacle_in_range
+[static_avoidance_node-22]   cache_reason=no_cache
+[lap_analyser-16] [INFO] [1786774838.767196101] [lap_analyser]: LapAnalyser: completed lap #18 in 0.609814254
+[lap_analyser-16] [INFO] [1786774838.769638862] [lap_analyser]: LapAnalyser: completed lap #19 in 0.001084609
+[controller_manager-28] [ERROR] [1786774838.949253288] [controller_manager]: [controller_manager] Received no local wpnts. STOPPING!!
+[static_avoidance_node-22] [INFO] [1786774838.987128042] [static_avoidance_planner]: [STATIC_AVOID] obs_id=- obs_dist=-m obs_s=- ego_s=15.15 side=-
+[static_avoidance_node-22]   left_clearance=- right_clearance=- candidate_valid=false rung=-
+[static_avoidance_node-22]   cache_used=false path_age=- path_points=0 planning_time_ms=0.1
+[static_avoidance_node-22]   reason=no_static_obstacle_in_range
+[static_avoidance_node-22]   cache_reason=no_cache
+[lap_analyser-16] [INFO] [1786774839.383919013] [lap_analyser]: LapAnalyser: completed lap #20 in 0.611592543
+[lap_analyser-16] [WARN] [1786774839.385082237] [lap_analyser]: Lap time over the past 10 laps: Mean: 0.4096, Std: 0.4305
+[lap_analyser-16] [WARN] [1786774839.385336377] [lap_analyser]: Avg Lat Error over the past 10 laps: Mean: 0.7220, Std: 0.1386
+[lap_analyser-16] [WARN] [1786774839.385577194] [lap_analyser]: Max Lat Error over the past 10 laps: Mean: 0.9098, Std: 0.0000
+[lap_analyser-16] [INFO] [1786774839.390542281] [lap_analyser]: LapAnalyser: completed lap #21 in 0.001699923
+[static_avoidance_node-22] [INFO] [1786774839.536936115] [static_avoidance_planner]: [STATIC_AVOID] obs_id=- obs_dist=-m obs_s=- ego_s=15.15 side=-
+[static_avoidance_node-22]   left_clearance=- right_clearance=- candidate_valid=false rung=-
+[static_avoidance_node-22]   cache_used=false path_age=- path_points=0 planning_time_ms=0.0
+[static_avoidance_node-22]   reason=no_static_obstacle_in_range
+[static_avoidance_node-22]   cache_reason=no_cache
+[lap_analyser-16] [INFO] [1786774839.849808303] [lap_analyser]: LapAnalyser: completed lap #22 in 0.457352547
+[recovery_spliner_node-20] [INFO] [1786774839.866491892] [recovery_spliner_node]: [recovery_spliner_node]: Evasion trajectory too close to TRACKBOUNDS, aborting evasion
+[static_avoidance_node-22] [INFO] [1786774840.036977952] [static_avoidance_planner]: [STATIC_AVOID] obs_id=- obs_dist=-m obs_s=- ego_s=15.15 side=-
+[static_avoidance_node-22]   left_clearance=- right_clearance=- candidate_valid=false rung=-
+[static_avoidance_node-22]   cache_used=false path_age=- path_points=0 planning_time_ms=0.0
+[static_avoidance_node-22]   reason=no_static_obstacle_in_range
+[static_avoidance_node-22]   cache_reason=no_cache
+[lap_analyser-16] [INFO] [1786774840.052115739] [lap_analyser]: LapAnalyser: completed lap #23 in 0.200750753
+[controller_manager-28] [ERROR] [1786774840.205237980] [controller_manager]: [controller_manager] Received no local wpnts. STOPPING!!
+[lap_analyser-16] [INFO] [1786774840.239024720] [lap_analyser]: LapAnalyser: completed lap #24 in 0.180458551
+[lap_analyser-16] [INFO] [1786774840.578745258] [lap_analyser]: LapAnalyser: completed lap #25 in 0.332385959
+[static_avoidance_node-22] [INFO] [1786774840.587641397] [static_avoidance_planner]: [STATIC_AVOID] obs_id=- obs_dist=-m obs_s=- ego_s=11.53 side=-
+[static_avoidance_node-22]   left_clearance=- right_clearance=- candidate_valid=false rung=-
+[static_avoidance_node-22]   cache_used=false path_age=- path_points=0 planning_time_ms=0.1
+[static_avoidance_node-22]   reason=no_static_obstacle_in_range
+[static_avoidance_node-22]   cache_reason=no_cache
+[controller_manager-28] [INFO] [1786774840.865330989] [controller_manager]: steering angle clipped
+[controller_manager-28] [INFO] [1786774840.884460538] [controller_manager]: steering angle clipped
+[controller_manager-28] [INFO] [1786774840.904409682] [controller_manager]: steering angle clipped
+[rviz2-29] [INFO] [1786774840.919656729] [rviz]: Message Filter dropping message: frame 'base_link' at time 1786774840.124 for reason 'discarding message because the queue is full'
+[controller_manager-28] [INFO] [1786774840.924509688] [controller_manager]: steering angle clipped
+[controller_manager-28] [INFO] [1786774840.944765570] [controller_manager]: steering angle clipped
+[controller_manager-28] [INFO] [1786774840.964645393] [controller_manager]: steering angle clipped
+[controller_manager-28] [INFO] [1786774840.984306466] [controller_manager]: steering angle clipped
+[controller_manager-28] [INFO] [1786774841.004831906] [controller_manager]: steering angle clipped
+[controller_manager-28] [INFO] [1786774841.024623604] [controller_manager]: steering angle clipped
+[controller_manager-28] [INFO] [1786774841.044609822] [controller_manager]: steering angle clipped
+[controller_manager-28] [ERROR] [1786774841.104990012] [controller_manager]: [controller_manager] Received no local wpnts. STOPPING!!
+[static_avoidance_node-22] [INFO] [1786774841.136802424] [static_avoidance_planner]: [STATIC_AVOID] obs_id=- obs_dist=-m obs_s=- ego_s=11.53 side=-
+[static_avoidance_node-22]   left_clearance=- right_clearance=- candidate_valid=false rung=-
+[static_avoidance_node-22]   cache_used=false path_age=- path_points=0 planning_time_ms=0.0
+[static_avoidance_node-22]   reason=no_static_obstacle_in_range
+[static_avoidance_node-22]   cache_reason=no_cache
+[controller_manager-28] [INFO] [1786774841.224530887] [controller_manager]: steering angle clipped
+[controller_manager-28] [INFO] [1786774841.244378094] [controller_manager]: steering angle clipped
+[lap_analyser-16] [INFO] [1786774841.253496462] [lap_analyser]: LapAnalyser: completed lap #26 in 0.673506996
+[controller_manager-28] [INFO] [1786774841.265029203] [controller_manager]: steering angle clipped
+[controller_manager-28] [INFO] [1786774841.284597445] [controller_manager]: steering angle clipped
+[controller_manager-28] [INFO] [1786774841.304497587] [controller_manager]: steering angle clipped
+[controller_manager-28] [INFO] [1786774841.325459205] [controller_manager]: steering angle clipped
+[controller_manager-28] [INFO] [1786774841.347041948] [controller_manager]: steering angle clipped
+[controller_manager-28] [INFO] [1786774841.364871176] [controller_manager]: steering angle clipped
+[controller_manager-28] [INFO] [1786774841.385750491] [controller_manager]: steering angle clipped
+[lap_analyser-16] [INFO] [1786774841.394893135] [lap_analyser]: LapAnalyser: completed lap #27 in 0.136868002
+[lap_analyser-16] [INFO] [1786774841.488853187] [lap_analyser]: LapAnalyser: completed lap #28 in 0.092444202
+[static_avoidance_node-22] [INFO] [1786774841.686743285] [static_avoidance_planner]: [STATIC_AVOID] obs_id=- obs_dist=-m obs_s=- ego_s=15.15 side=-
+[static_avoidance_node-22]   left_clearance=- right_clearance=- candidate_valid=false rung=-
+[static_avoidance_node-22]   cache_used=false path_age=- path_points=0 planning_time_ms=0.0
+[static_avoidance_node-22]   reason=no_static_obstacle_in_range
+[static_avoidance_node-22]   cache_reason=no_cache
+[controller_manager-28] [ERROR] [1786774841.744651533] [controller_manager]: [controller_manager] Received no local wpnts. STOPPING!!
+[controller_manager-28] [INFO] [1786774841.786179324] [controller_manager]: steering angle clipped
+[lap_analyser-16] [INFO] [1786774841.787784150] [lap_analyser]: LapAnalyser: completed lap #29 in 0.294211641
+[controller_manager-28] [INFO] [1786774841.806459599] [controller_manager]: steering angle clipped
+[controller_manager-28] [INFO] [1786774841.824860869] [controller_manager]: steering angle clipped
+[controller_manager-28] [INFO] [1786774841.845860929] [controller_manager]: steering angle clipped
+[controller_manager-28] [INFO] [1786774841.866514900] [controller_manager]: steering angle clipped
+[controller_manager-28] [INFO] [1786774841.885028784] [controller_manager]: steering angle clipped
+[controller_manager-28] [INFO] [1786774841.905041545] [controller_manager]: steering angle clipped
+[controller_manager-28] [INFO] [1786774841.924979345] [controller_manager]: steering angle clipped
+[controller_manager-28] [INFO] [1786774841.944902701] [controller_manager]: steering angle clipped
+[controller_manager-28] [INFO] [1786774842.124921028] [controller_manager]: steering angle clipped
+[lap_analyser-16] [INFO] [1786774842.137822616] [lap_analyser]: LapAnalyser: completed lap #30 in 0.349010082
+[lap_analyser-16] [WARN] [1786774842.139693513] [lap_analyser]: Lap time over the past 10 laps: Mean: 0.2719, Std: 0.1851
+[lap_analyser-16] [WARN] [1786774842.139981429] [lap_analyser]: Avg Lat Error over the past 10 laps: Mean: 0.6773, Std: 0.1386
+[lap_analyser-16] [WARN] [1786774842.140275427] [lap_analyser]: Max Lat Error over the past 10 laps: Mean: 0.9098, Std: 0.0000
+[controller_manager-28] [INFO] [1786774842.145694018] [controller_manager]: steering angle clipped
+[controller_manager-28] [INFO] [1786774842.165229970] [controller_manager]: steering angle clipped
+[controller_manager-28] [INFO] [1786774842.185482537] [controller_manager]: steering angle clipped
+[static_avoidance_node-22] [INFO] [1786774842.186746288] [static_avoidance_planner]: [STATIC_AVOID] obs_id=- obs_dist=-m obs_s=- ego_s=15.15 side=-
+[static_avoidance_node-22]   left_clearance=- right_clearance=- candidate_valid=false rung=-
+[static_avoidance_node-22]   cache_used=false path_age=- path_points=0 planning_time_ms=0.0
+[static_avoidance_node-22]   reason=no_static_obstacle_in_range
+[static_avoidance_node-22]   cache_reason=no_cache
+[controller_manager-28] [INFO] [1786774842.206114912] [controller_manager]: steering angle clipped
+[lap_analyser-16] [INFO] [1786774842.418807235] [lap_analyser]: LapAnalyser: completed lap #31 in 0.279296562
+[lap_analyser-16] [INFO] [1786774842.628467882] [lap_analyser]: LapAnalyser: completed lap #32 in 0.206626731
+[static_avoidance_node-22] [INFO] [1786774842.687007917] [static_avoidance_planner]: [STATIC_AVOID] obs_id=- obs_dist=-m obs_s=- ego_s=11.50 side=-
+[static_avoidance_node-22]   left_clearance=- right_clearance=- candidate_valid=false rung=-
+[static_avoidance_node-22]   cache_used=false path_age=- path_points=0 planning_time_ms=0.1
+[static_avoidance_node-22]   reason=no_static_obstacle_in_range
+[static_avoidance_node-22]   cache_reason=no_cache
+[static_avoidance_node-22] [INFO] [1786774843.237067307] [static_avoidance_planner]: [STATIC_AVOID] obs_id=- obs_dist=-m obs_s=- ego_s=15.15 side=-
+[static_avoidance_node-22]   left_clearance=- right_clearance=- candidate_valid=false rung=-
+[static_avoidance_node-22]   cache_used=false path_age=- path_points=0 planning_time_ms=0.1
+[static_avoidance_node-22]   reason=no_static_obstacle_in_range
+[static_avoidance_node-22]   cache_reason=no_cache
+[lap_analyser-16] [INFO] [1786774843.351970326] [lap_analyser]: LapAnalyser: completed lap #33 in 0.722284266
+[controller_manager-28] [ERROR] [1786774843.470054969] [controller_manager]: [controller_manager] Received no local wpnts. STOPPING!!
+[static_avoidance_node-22] [INFO] [1786774843.787026742] [static_avoidance_planner]: [STATIC_AVOID] obs_id=- obs_dist=-m obs_s=- ego_s=15.15 side=-
+[static_avoidance_node-22]   left_clearance=- right_clearance=- candidate_valid=false rung=-
+[static_avoidance_node-22]   cache_used=false path_age=- path_points=0 planning_time_ms=0.1
+[static_avoidance_node-22]   reason=no_static_obstacle_in_range
+[static_avoidance_node-22]   cache_reason=no_cache
+[lap_analyser-16] [INFO] [1786774843.905152644] [lap_analyser]: LapAnalyser: completed lap #34 in 0.551566121
+[controller_manager-28] [INFO] [1786774843.969887651] [controller_manager]: steering angle clipped
+[controller_manager-28] [ERROR] [1786774843.970760263] [controller_manager]: [controller_manager] Received no local wpnts. STOPPING!!
+[controller_manager-28] [INFO] [1786774843.984896648] [controller_manager]: steering angle clipped
+[controller_manager-28] [INFO] [1786774844.005546456] [controller_manager]: steering angle clipped
+[controller_manager-28] [INFO] [1786774844.024616957] [controller_manager]: steering angle clipped
+[controller_manager-28] [INFO] [1786774844.044503961] [controller_manager]: steering angle clipped
+[static_avoidance_node-22] [INFO] [1786774844.336862438] [static_avoidance_planner]: [STATIC_AVOID] obs_id=- obs_dist=-m obs_s=- ego_s=15.15 side=-
+[static_avoidance_node-22]   left_clearance=- right_clearance=- candidate_valid=false rung=-
+[static_avoidance_node-22]   cache_used=false path_age=- path_points=0 planning_time_ms=0.1
+[static_avoidance_node-22]   reason=no_static_obstacle_in_range
+[static_avoidance_node-22]   cache_reason=no_cache
+[controller_manager-28] [ERROR] [1786774844.689996460] [controller_manager]: [controller_manager] Received no local wpnts. STOPPING!!
+[recovery_spliner_node-20] [INFO] [1786774844.744823993] [recovery_spliner_node]: [recovery_spliner_node]: Evasion trajectory too close to TRACKBOUNDS, aborting evasion
+[lap_analyser-16] [INFO] [1786774844.875212737] [lap_analyser]: LapAnalyser: completed lap #35 in 0.968463883
+[static_avoidance_node-22] [INFO] [1786774844.887272699] [static_avoidance_planner]: [STATIC_AVOID] obs_id=- obs_dist=-m obs_s=- ego_s=11.52 side=-
+[static_avoidance_node-22]   left_clearance=- right_clearance=- candidate_valid=false rung=-
+[static_avoidance_node-22]   cache_used=false path_age=- path_points=0 planning_time_ms=0.0
+[static_avoidance_node-22]   reason=no_static_obstacle_in_range
+[static_avoidance_node-22]   cache_reason=no_cache
+[lap_analyser-16] [INFO] [1786774845.168199725] [lap_analyser]: LapAnalyser: completed lap #36 in 0.288682598
+[lap_analyser-16] [INFO] [1786774845.183541208] [lap_analyser]: LapAnalyser: completed lap #37 in 0.011377027
+[controller_manager-28] [ERROR] [1786774845.305420960] [controller_manager]: [controller_manager] Received no local wpnts. STOPPING!!
+[lap_analyser-16] [INFO] [1786774845.369462729] [lap_analyser]: LapAnalyser: completed lap #38 in 0.184393306
+[static_avoidance_node-22] [INFO] [1786774845.436734164] [static_avoidance_planner]: [STATIC_AVOID] obs_id=- obs_dist=-m obs_s=- ego_s=11.52 side=-
+[static_avoidance_node-22]   left_clearance=- right_clearance=- candidate_valid=false rung=-
+[static_avoidance_node-22]   cache_used=false path_age=- path_points=0 planning_time_ms=0.0
+[static_avoidance_node-22]   reason=no_static_obstacle_in_range
+[static_avoidance_node-22]   cache_reason=no_cache
+[lap_analyser-16] [INFO] [1786774845.566126435] [lap_analyser]: LapAnalyser: completed lap #39 in 0.195733802
+[controller_manager-28] [INFO] [1786774845.724598901] [controller_manager]: steering angle clipped
+[static_avoidance_node-22] [INFO] [1786774845.937488911] [static_avoidance_planner]: [STATIC_AVOID] obs_id=- obs_dist=-m obs_s=- ego_s=15.15 side=-
+[static_avoidance_node-22]   left_clearance=- right_clearance=- candidate_valid=false rung=-
+[static_avoidance_node-22]   cache_used=false path_age=- path_points=0 planning_time_ms=0.1
+[static_avoidance_node-22]   reason=no_static_obstacle_in_range
+[static_avoidance_node-22]   cache_reason=no_cache
+[controller_manager-28] [ERROR] [1786774845.964840930] [controller_manager]: [controller_manager] Received no local wpnts. STOPPING!!
+[lap_analyser-16] [INFO] [1786774845.997196148] [lap_analyser]: LapAnalyser: completed lap #40 in 0.430036751
+[lap_analyser-16] [WARN] [1786774845.999102385] [lap_analyser]: Lap time over the past 10 laps: Mean: 0.3838, Std: 0.2742
+[lap_analyser-16] [WARN] [1786774845.999523352] [lap_analyser]: Avg Lat Error over the past 10 laps: Mean: 0.5944, Std: 0.1538
+[lap_analyser-16] [WARN] [1786774845.999852081] [lap_analyser]: Max Lat Error over the past 10 laps: Mean: 0.9098, Std: 0.0000
+[controller_manager-28] [INFO] [1786774846.024791531] [controller_manager]: steering angle clipped
+[lap_analyser-16] [INFO] [1786774846.035494883] [lap_analyser]: LapAnalyser: completed lap #41 in 0.036561242
+[controller_manager-28] [INFO] [1786774846.064326012] [controller_manager]: steering angle clipped
+[lap_analyser-16] [INFO] [1786774846.128482416] [lap_analyser]: LapAnalyser: completed lap #42 in 0.090538682
+[lap_analyser-16] [INFO] [1786774846.181966762] [lap_analyser]: LapAnalyser: completed lap #43 in 0.049879362
+[controller_manager-28] [INFO] [1786774846.186221865] [controller_manager]: steering angle clipped
+[state_machine-19] [INFO] [1786774846.207407768] [state_machine]: [STATIC_OT] state=GB_TRACK path_exists=0 path_locked=0 path_ttl_ok=0 path_safe=0 on_spline=0 speed=0.00 decision=TRAILING reason=NO_STATIC_PATH
+[state_machine-19] [INFO] [1786774846.208044863] [state_machine]: [State Machine] FREE False, obs dist to ot lane: 0.106384568465655 m
+[controller_manager-28] [INFO] [1786774846.286651510] [controller_manager]: steering angle clipped
+[lap_analyser-16] [INFO] [1786774846.465665846] [lap_analyser]: LapAnalyser: completed lap #44 in 0.281032901
+[state_machine-19] [INFO] [1786774846.471258530] [state_machine]: [STATIC_OT] state=GB_TRACK path_exists=0 path_locked=0 path_ttl_ok=0 path_safe=0 on_spline=0 speed=0.00 decision=TRAILING reason=NO_STATIC_PATH
+[static_avoidance_node-22] [INFO] [1786774846.487100596] [static_avoidance_planner]: [STATIC_AVOID] obs_id=- obs_dist=-m obs_s=- ego_s=15.15 side=-
+[static_avoidance_node-22]   left_clearance=- right_clearance=- candidate_valid=false rung=-
+[static_avoidance_node-22]   cache_used=false path_age=- path_points=0 planning_time_ms=0.1
+[static_avoidance_node-22]   reason=no_static_obstacle_in_range
+[static_avoidance_node-22]   cache_reason=no_cache
+[lap_analyser-16] [INFO] [1786774846.600286887] [lap_analyser]: LapAnalyser: completed lap #45 in 0.133670447
+[controller_manager-28] [ERROR] [1786774846.745728183] [controller_manager]: [controller_manager] Received no local wpnts. STOPPING!!
+[recovery_spliner_node-20] [INFO] [1786774846.766276581] [recovery_spliner_node]: [recovery_spliner_node]: Evasion trajectory too close to TRACKBOUNDS, aborting evasion
+[static_avoidance_node-22] [INFO] [1786774847.036801818] [static_avoidance_planner]: [STATIC_AVOID] obs_id=- obs_dist=-m obs_s=- ego_s=15.15 side=-
+[static_avoidance_node-22]   left_clearance=- right_clearance=- candidate_valid=false rung=-
+[static_avoidance_node-22]   cache_used=false path_age=- path_points=0 planning_time_ms=0.0
+[static_avoidance_node-22]   reason=no_static_obstacle_in_range
+[static_avoidance_node-22]   cache_reason=no_cache
+[lap_analyser-16] [INFO] [1786774847.365660152] [lap_analyser]: LapAnalyser: completed lap #46 in 0.764390749
+[static_avoidance_node-22] [INFO] [1786774847.537402877] [static_avoidance_planner]: [STATIC_AVOID] obs_id=- obs_dist=-m obs_s=- ego_s=15.15 side=-
+[static_avoidance_node-22]   left_clearance=- right_clearance=- candidate_valid=false rung=-
+[static_avoidance_node-22]   cache_used=false path_age=- path_points=0 planning_time_ms=0.1
+[static_avoidance_node-22]   reason=no_static_obstacle_in_range
+[static_avoidance_node-22]   cache_reason=no_cache
+[lap_analyser-16] [INFO] [1786774847.607909168] [lap_analyser]: LapAnalyser: completed lap #47 in 0.24123184
+[controller_manager-28] [INFO] [1786774847.624305737] [controller_manager]: steering angle clipped
+[controller_manager-28] [INFO] [1786774847.644548220] [controller_manager]: steering angle clipped
+[controller_manager-28] [INFO] [1786774847.664488283] [controller_manager]: steering angle clipped
+[controller_manager-28] [INFO] [1786774847.684427219] [controller_manager]: steering angle clipped
+[rviz2-29] [INFO] [1786774847.703688109] [rviz]: Message Filter dropping message: frame 'base_link' at time 1786774846.685 for reason 'discarding message because the queue is full'
+[controller_manager-28] [INFO] [1786774847.704453872] [controller_manager]: steering angle clipped
+[controller_manager-28] [INFO] [1786774847.724858945] [controller_manager]: steering angle clipped
+[controller_manager-28] [INFO] [1786774847.744928716] [controller_manager]: steering angle clipped
+[controller_manager-28] [ERROR] [1786774847.866355738] [controller_manager]: [controller_manager] Received no local wpnts. STOPPING!!
+[controller_manager-28] [INFO] [1786774847.964898095] [controller_manager]: steering angle clipped
+[lap_analyser-16] [INFO] [1786774847.981193943] [lap_analyser]: LapAnalyser: completed lap #48 in 0.370815363
+[static_avoidance_node-22] [INFO] [1786774848.087399718] [static_avoidance_planner]: [STATIC_AVOID] obs_id=- obs_dist=-m obs_s=- ego_s=11.68 side=-
+[static_avoidance_node-22]   left_clearance=- right_clearance=- candidate_valid=false rung=-
+[static_avoidance_node-22]   cache_used=false path_age=- path_points=0 planning_time_ms=0.1
+[static_avoidance_node-22]   reason=no_static_obstacle_in_range
+[static_avoidance_node-22]   cache_reason=no_cache
+[controller_manager-28] [INFO] [1786774848.221333539] [controller_manager]: steering angle clipped
+[controller_manager-28] [INFO] [1786774848.324626018] [controller_manager]: steering angle clipped
+[controller_manager-28] [INFO] [1786774848.348173040] [controller_manager]: steering angle clipped
+[controller_manager-28] [INFO] [1786774848.364340359] [controller_manager]: steering angle clipped
+[controller_manager-28] [INFO] [1786774848.384890977] [controller_manager]: steering angle clipped
+[lap_analyser-16] [INFO] [1786774848.394000872] [lap_analyser]: LapAnalyser: completed lap #49 in 0.40913696
+[controller_manager-28] [INFO] [1786774848.405262781] [controller_manager]: steering angle clipped
+[lap_analyser-16] [INFO] [1786774848.576525074] [lap_analyser]: LapAnalyser: completed lap #50 in 0.180325849
+[lap_analyser-16] [WARN] [1786774848.579853468] [lap_analyser]: Lap time over the past 10 laps: Mean: 0.2558, Std: 0.2085
+[lap_analyser-16] [WARN] [1786774848.580386542] [lap_analyser]: Avg Lat Error over the past 10 laps: Mean: 0.5923, Std: 0.1223
+[lap_analyser-16] [WARN] [1786774848.580793208] [lap_analyser]: Max Lat Error over the past 10 laps: Mean: 0.9098, Std: 0.0000
+[static_avoidance_node-22] [INFO] [1786774848.636999708] [static_avoidance_planner]: [STATIC_AVOID] obs_id=- obs_dist=-m obs_s=- ego_s=15.15 side=-
+[static_avoidance_node-22]   left_clearance=- right_clearance=- candidate_valid=false rung=-
+[static_avoidance_node-22]   cache_used=false path_age=- path_points=0 planning_time_ms=0.1
+[static_avoidance_node-22]   reason=no_static_obstacle_in_range
+[static_avoidance_node-22]   cache_reason=no_cache
+[lap_analyser-16] [INFO] [1786774848.841821664] [lap_analyser]: LapAnalyser: completed lap #51 in 0.263696762
+[controller_manager-28] [INFO] [1786774848.848039503] [controller_manager]: steering angle clipped
+[controller_manager-28] [ERROR] [1786774848.848799668] [controller_manager]: [controller_manager] Received no local wpnts. STOPPING!!
+[controller_manager-28] [INFO] [1786774848.864505067] [controller_manager]: steering angle clipped
+[controller_manager-28] [INFO] [1786774848.884544230] [controller_manager]: steering angle clipped
+[controller_manager-28] [INFO] [1786774848.904722873] [controller_manager]: steering angle clipped
+[controller_manager-28] [INFO] [1786774848.924924957] [controller_manager]: steering angle clipped
+[lap_analyser-16] [INFO] [1786774849.043785971] [lap_analyser]: LapAnalyser: completed lap #52 in 0.1999405
+[controller_manager-28] [INFO] [1786774849.045435117] [controller_manager]: steering angle clipped
+[controller_manager-28] [INFO] [1786774849.064825775] [controller_manager]: steering angle clipped
+[controller_manager-28] [INFO] [1786774849.084935462] [controller_manager]: steering angle clipped
+[controller_manager-28] [INFO] [1786774849.105332122] [controller_manager]: steering angle clipped
+[controller_manager-28] [INFO] [1786774849.124817502] [controller_manager]: steering angle clipped
+[controller_manager-28] [INFO] [1786774849.145214842] [controller_manager]: steering angle clipped
+[static_avoidance_node-22] [INFO] [1786774849.186715579] [static_avoidance_planner]: [STATIC_AVOID] obs_id=- obs_dist=-m obs_s=- ego_s=15.15 side=-
+[static_avoidance_node-22]   left_clearance=- right_clearance=- candidate_valid=false rung=-
+[static_avoidance_node-22]   cache_used=false path_age=- path_points=0 planning_time_ms=0.0
+[static_avoidance_node-22]   reason=no_static_obstacle_in_range
+[static_avoidance_node-22]   cache_reason=no_cache
+[lap_analyser-16] [INFO] [1786774849.269879777] [lap_analyser]: LapAnalyser: completed lap #53 in 0.225114888
+[controller_manager-28] [ERROR] [1786774849.364840404] [controller_manager]: [controller_manager] Received no local wpnts. STOPPING!!
+[controller_manager-28] [INFO] [1786774849.404531918] [controller_manager]: steering angle clipped
+[static_avoidance_node-22] [INFO] [1786774849.686794345] [static_avoidance_planner]: [STATIC_AVOID] obs_id=- obs_dist=-m obs_s=- ego_s=11.52 side=-
+[static_avoidance_node-22]   left_clearance=- right_clearance=- candidate_valid=false rung=-
+[static_avoidance_node-22]   cache_used=false path_age=- path_points=0 planning_time_ms=0.0
+[static_avoidance_node-22]   reason=no_static_obstacle_in_range
+[static_avoidance_node-22]   cache_reason=no_cache
+[controller_manager-28] [ERROR] [1786774849.965243689] [controller_manager]: [controller_manager] Received no local wpnts. STOPPING!!
+[controller_manager-28] [INFO] [1786774849.985081971] [controller_manager]: steering angle clipped
+[static_avoidance_node-22] [INFO] [1786774850.186952627] [static_avoidance_planner]: [STATIC_AVOID] obs_id=- obs_dist=-m obs_s=- ego_s=15.15 side=-
+[static_avoidance_node-22]   left_clearance=- right_clearance=- candidate_valid=false rung=-
+[static_avoidance_node-22]   cache_used=false path_age=- path_points=0 planning_time_ms=0.1
+[static_avoidance_node-22]   reason=no_static_obstacle_in_range
+[static_avoidance_node-22]   cache_reason=no_cache
+[lap_analyser-16] [INFO] [1786774850.235925135] [lap_analyser]: LapAnalyser: completed lap #54 in 0.963128065
+[lap_analyser-16] [INFO] [1786774850.363107450] [lap_analyser]: LapAnalyser: completed lap #55 in 0.126124962
+[controller_manager-28] [INFO] [1786774850.385753084] [controller_manager]: steering angle clipped
+[controller_manager-28] [INFO] [1786774850.404601911] [controller_manager]: steering angle clipped
+[controller_manager-28] [INFO] [1786774850.424417099] [controller_manager]: steering angle clipped
+[controller_manager-28] [INFO] [1786774850.445113485] [controller_manager]: steering angle clipped
+[controller_manager-28] [INFO] [1786774850.464586891] [controller_manager]: steering angle clipped
+[controller_manager-28] [ERROR] [1786774850.465437036] [controller_manager]: [controller_manager] Received no local wpnts. STOPPING!!
+[controller_manager-28] [INFO] [1786774850.484486737] [controller_manager]: steering angle clipped
+[static_avoidance_node-22] [INFO] [1786774850.737424750] [static_avoidance_planner]: [STATIC_AVOID] obs_id=- obs_dist=-m obs_s=- ego_s=11.52 side=-
+[static_avoidance_node-22]   left_clearance=- right_clearance=- candidate_valid=false rung=-
+[static_avoidance_node-22]   cache_used=false path_age=- path_points=0 planning_time_ms=0.1
+[static_avoidance_node-22]   reason=no_static_obstacle_in_range
+[static_avoidance_node-22]   cache_reason=no_cache
+[controller_manager-28] [INFO] [1786774850.789005759] [controller_manager]: steering angle clipped
+[controller_manager-28] [INFO] [1786774850.805027195] [controller_manager]: steering angle clipped
+[controller_manager-28] [INFO] [1786774850.824414746] [controller_manager]: steering angle clipped
+[controller_manager-28] [INFO] [1786774850.845586463] [controller_manager]: steering angle clipped
+[controller_manager-28] [INFO] [1786774850.864351420] [controller_manager]: steering angle clipped
+[controller_manager-28] [INFO] [1786774850.885077872] [controller_manager]: steering angle clipped
+[controller_manager-28] [INFO] [1786774850.905759767] [controller_manager]: steering angle clipped
+[controller_manager-28] [INFO] [1786774850.925275280] [controller_manager]: steering angle clipped
+[controller_manager-28] [INFO] [1786774850.944995232] [controller_manager]: steering angle clipped
+[recovery_spliner_node-20] [INFO] [1786774851.196563428] [recovery_spliner_node]: [recovery_spliner_node]: Evasion trajectory too close to TRACKBOUNDS, aborting evasion
+[static_avoidance_node-22] [INFO] [1786774851.237616230] [static_avoidance_planner]: [STATIC_AVOID] obs_id=- obs_dist=-m obs_s=- ego_s=15.15 side=-
+[static_avoidance_node-22]   left_clearance=- right_clearance=- candidate_valid=false rung=-
+[static_avoidance_node-22]   cache_used=false path_age=- path_points=0 planning_time_ms=0.0
+[static_avoidance_node-22]   reason=no_static_obstacle_in_range
+[static_avoidance_node-22]   cache_reason=no_cache
+[lap_analyser-16] [INFO] [1786774851.458769096] [lap_analyser]: LapAnalyser: completed lap #56 in 1.090686002
+[controller_manager-28] [ERROR] [1786774851.785103200] [controller_manager]: [controller_manager] Received no local wpnts. STOPPING!!
+[static_avoidance_node-22] [INFO] [1786774851.786873464] [static_avoidance_planner]: [STATIC_AVOID] obs_id=- obs_dist=-m obs_s=- ego_s=15.15 side=-
+[static_avoidance_node-22]   left_clearance=- right_clearance=- candidate_valid=false rung=-
+[static_avoidance_node-22]   cache_used=false path_age=- path_points=0 planning_time_ms=0.0
+[static_avoidance_node-22]   reason=no_static_obstacle_in_range
+[static_avoidance_node-22]   cache_reason=no_cache
+[lap_analyser-16] [INFO] [1786774851.851419521] [lap_analyser]: LapAnalyser: completed lap #57 in 0.39002808
+[rviz2-29] [INFO] [1786774851.895595516] [rviz]: Message Filter dropping message: frame 'base_link' at time 1786774851.485 for reason 'discarding message because the queue is full'
+[static_avoidance_node-22] [INFO] [1786774852.286975773] [static_avoidance_planner]: [STATIC_AVOID] obs_id=- obs_dist=-m obs_s=- ego_s=11.58 side=-
+[static_avoidance_node-22]   left_clearance=- right_clearance=- candidate_valid=false rung=-
+[static_avoidance_node-22]   cache_used=false path_age=- path_points=0 planning_time_ms=0.0
+[static_avoidance_node-22]   reason=no_static_obstacle_in_range
+[static_avoidance_node-22]   cache_reason=no_cache
+[static_avoidance_node-22] [INFO] [1786774852.786984748] [static_avoidance_planner]: [STATIC_AVOID] obs_id=- obs_dist=-m obs_s=- ego_s=15.15 side=-
+[static_avoidance_node-22]   left_clearance=- right_clearance=- candidate_valid=false rung=-
+[static_avoidance_node-22]   cache_used=false path_age=- path_points=0 planning_time_ms=0.1
+[static_avoidance_node-22]   reason=no_static_obstacle_in_range
+[static_avoidance_node-22]   cache_reason=no_cache
+[lap_analyser-16] [INFO] [1786774852.812236071] [lap_analyser]: LapAnalyser: completed lap #58 in 0.95814934
+[controller_manager-28] [ERROR] [1786774853.200359404] [controller_manager]: [controller_manager] Received no local wpnts. STOPPING!!
+[controller_manager-28] [INFO] [1786774853.224939538] [controller_manager]: steering angle clipped
+[static_avoidance_node-22] [INFO] [1786774853.336849954] [static_avoidance_planner]: [STATIC_AVOID] obs_id=- obs_dist=-m obs_s=- ego_s=15.15 side=-
+[static_avoidance_node-22]   left_clearance=- right_clearance=- candidate_valid=false rung=-
+[static_avoidance_node-22]   cache_used=false path_age=- path_points=0 planning_time_ms=0.0
+[static_avoidance_node-22]   reason=no_static_obstacle_in_range
+[static_avoidance_node-22]   cache_reason=no_cache
+[recovery_spliner_node-20] [INFO] [1786774853.441407764] [recovery_spliner_node]: [recovery_spliner_node]: Evasion trajectory too close to TRACKBOUNDS, aborting evasion
+[static_avoidance_node-22] [INFO] [1786774853.886989407] [static_avoidance_planner]: [STATIC_AVOID] obs_id=- obs_dist=-m obs_s=- ego_s=15.15 side=-
+[static_avoidance_node-22]   left_clearance=- right_clearance=- candidate_valid=false rung=-
+[static_avoidance_node-22]   cache_used=false path_age=- path_points=0 planning_time_ms=0.1
+[static_avoidance_node-22]   reason=no_static_obstacle_in_range
+[static_avoidance_node-22]   cache_reason=no_cache
+[lap_analyser-16] [INFO] [1786774854.041086405] [lap_analyser]: LapAnalyser: completed lap #59 in 1.223700627
+[controller_manager-28] [ERROR] [1786774854.084730382] [controller_manager]: [controller_manager] Received no local wpnts. STOPPING!!
+[static_avoidance_node-22] [INFO] [1786774854.436923473] [static_avoidance_planner]: [STATIC_AVOID] obs_id=- obs_dist=-m obs_s=- ego_s=11.55 side=-
+[static_avoidance_node-22]   left_clearance=- right_clearance=- candidate_valid=false rung=-
+[static_avoidance_node-22]   cache_used=false path_age=- path_points=0 planning_time_ms=0.1
+[static_avoidance_node-22]   reason=no_static_obstacle_in_range
+[static_avoidance_node-22]   cache_reason=no_cache
+[lap_analyser-16] [INFO] [1786774854.932973871] [lap_analyser]: LapAnalyser: completed lap #60 in 0.890573085
+[lap_analyser-16] [WARN] [1786774854.934520754] [lap_analyser]: Lap time over the past 10 laps: Mean: 0.6331, Std: 0.4057
+[lap_analyser-16] [WARN] [1786774854.934789052] [lap_analyser]: Avg Lat Error over the past 10 laps: Mean: 0.6125, Std: 0.1399
+[lap_analyser-16] [WARN] [1786774854.935028490] [lap_analyser]: Max Lat Error over the past 10 laps: Mean: 0.9098, Std: 0.0000
+[static_avoidance_node-22] [INFO] [1786774854.938216104] [static_avoidance_planner]: [STATIC_AVOID] obs_id=- obs_dist=-m obs_s=- ego_s=11.55 side=-
+[static_avoidance_node-22]   left_clearance=- right_clearance=- candidate_valid=false rung=-
+[static_avoidance_node-22]   cache_used=false path_age=- path_points=0 planning_time_ms=0.1
+[static_avoidance_node-22]   reason=no_static_obstacle_in_range
+[static_avoidance_node-22]   cache_reason=no_cache
+[controller_manager-28] [ERROR] [1786774855.304909160] [controller_manager]: [controller_manager] Received no local wpnts. STOPPING!!
+[rviz2-29] [INFO] [1786774855.383653246] [rviz]: Message Filter dropping message: frame 'base_link' at time 1786774854.765 for reason 'discarding message because the queue is full'
+[static_avoidance_node-22] [INFO] [1786774855.486991004] [static_avoidance_planner]: [STATIC_AVOID] obs_id=- obs_dist=-m obs_s=- ego_s=11.53 side=-
+[static_avoidance_node-22]   left_clearance=- right_clearance=- candidate_valid=false rung=-
+[static_avoidance_node-22]   cache_used=false path_age=- path_points=0 planning_time_ms=0.1
+[static_avoidance_node-22]   reason=no_static_obstacle_in_range
+[static_avoidance_node-22]   cache_reason=no_cache
+[controller_manager-28] [INFO] [1786774855.546265981] [controller_manager]: steering angle clipped
+[controller_manager-28] [INFO] [1786774855.564845856] [controller_manager]: steering angle clipped
+[controller_manager-28] [INFO] [1786774855.584933370] [controller_manager]: steering angle clipped
+[controller_manager-28] [INFO] [1786774855.605355736] [controller_manager]: steering angle clipped
+[controller_manager-28] [INFO] [1786774855.645018837] [controller_manager]: steering angle clipped
+[controller_manager-28] [INFO] [1786774855.664641173] [controller_manager]: steering angle clipped
+[controller_manager-28] [INFO] [1786774855.687088499] [controller_manager]: steering angle clipped
+[recovery_spliner_node-20] [INFO] [1786774855.691788432] [recovery_spliner_node]: [recovery_spliner_node]: Evasion trajectory too close to TRACKBOUNDS, aborting evasion
+[controller_manager-28] [INFO] [1786774855.705851078] [controller_manager]: steering angle clipped
+[controller_manager-28] [INFO] [1786774855.726023161] [controller_manager]: steering angle clipped
+[static_avoidance_node-22] [INFO] [1786774856.037850472] [static_avoidance_planner]: [STATIC_AVOID] obs_id=- obs_dist=-m obs_s=- ego_s=15.15 side=-
+[static_avoidance_node-22]   left_clearance=- right_clearance=- candidate_valid=false rung=-
+[static_avoidance_node-22]   cache_used=false path_age=- path_points=0 planning_time_ms=0.1
+[static_avoidance_node-22]   reason=no_static_obstacle_in_range
+[static_avoidance_node-22]   cache_reason=no_cache
+[lap_analyser-16] [INFO] [1786774856.249998696] [lap_analyser]: LapAnalyser: completed lap #61 in 1.3155356
+[controller_manager-28] [ERROR] [1786774856.404640445] [controller_manager]: [controller_manager] Received no local wpnts. STOPPING!!
+[static_avoidance_node-22] [INFO] [1786774856.537781312] [static_avoidance_planner]: [STATIC_AVOID] obs_id=- obs_dist=-m obs_s=- ego_s=11.53 side=-
+[static_avoidance_node-22]   left_clearance=- right_clearance=- candidate_valid=false rung=-
+[static_avoidance_node-22]   cache_used=false path_age=- path_points=0 planning_time_ms=0.1
+[static_avoidance_node-22]   reason=no_static_obstacle_in_range
+[static_avoidance_node-22]   cache_reason=no_cache
+[controller_manager-28] [ERROR] [1786774857.066128803] [controller_manager]: [controller_manager] Received no local wpnts. STOPPING!!
+[static_avoidance_node-22] [INFO] [1786774857.086959716] [static_avoidance_planner]: [STATIC_AVOID] obs_id=- obs_dist=-m obs_s=- ego_s=11.53 side=-
+[static_avoidance_node-22]   left_clearance=- right_clearance=- candidate_valid=false rung=-
+[static_avoidance_node-22]   cache_used=false path_age=- path_points=0 planning_time_ms=0.1
+[static_avoidance_node-22]   reason=no_static_obstacle_in_range
+[static_avoidance_node-22]   cache_reason=no_cache
+[controller_manager-28] [INFO] [1786774857.286483616] [controller_manager]: steering angle clipped
+[lap_analyser-16] [INFO] [1786774857.304533243] [lap_analyser]: LapAnalyser: completed lap #62 in 1.052946255
+[controller_manager-28] [INFO] [1786774857.324873956] [controller_manager]: steering angle clipped
+[lap_analyser-16] [INFO] [1786774857.363543892] [lap_analyser]: LapAnalyser: completed lap #63 in 0.057190225
+[lap_analyser-16] [INFO] [1786774857.407707074] [lap_analyser]: LapAnalyser: completed lap #64 in 0.042134814
+[controller_manager-28] [ERROR] [1786774857.585401335] [controller_manager]: [controller_manager] Received no local wpnts. STOPPING!!
+[static_avoidance_node-22] [INFO] [1786774857.637029838] [static_avoidance_planner]: [STATIC_AVOID] obs_id=- obs_dist=-m obs_s=- ego_s=15.15 side=-
+[static_avoidance_node-22]   left_clearance=- right_clearance=- candidate_valid=false rung=-
+[static_avoidance_node-22]   cache_used=false path_age=- path_points=0 planning_time_ms=0.1
+[static_avoidance_node-22]   reason=no_static_obstacle_in_range
+[static_avoidance_node-22]   cache_reason=no_cache
+[recovery_spliner_node-20] [INFO] [1786774857.692091429] [recovery_spliner_node]: [recovery_spliner_node]: Evasion trajectory too close to TRACKBOUNDS, aborting evasion
+[static_avoidance_node-22] [INFO] [1786774858.186975967] [static_avoidance_planner]: [STATIC_AVOID] obs_id=- obs_dist=-m obs_s=- ego_s=15.15 side=-
+[static_avoidance_node-22]   left_clearance=- right_clearance=- candidate_valid=false rung=-
+[static_avoidance_node-22]   cache_used=false path_age=- path_points=0 planning_time_ms=0.1
+[static_avoidance_node-22]   reason=no_static_obstacle_in_range
+[static_avoidance_node-22]   cache_reason=no_cache
+[WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+[rviz2-29] [INFO] [1786774858.324007319] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[robot_state_publisher-3] [INFO] [1786774858.324113280] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[sector_tuner-12] Traceback (most recent call last):
+[sector_tuner-12]   File "/home/hotao/roboracer_ws/install/sector_tuner/lib/sector_tuner/sector_tuner", line 33, in <module>
+[sector_tuner-12]     sys.exit(load_entry_point('sector-tuner', 'console_scripts', 'sector_tuner')())
+[sector_tuner-12]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[sector_tuner-12]   File "/home/hotao/roboracer_ws/build/sector_tuner/sector_tuner/sector_tuner.py", line 311, in main
+[sector_tuner-12]     rclpy.spin(node)
+[sector_tuner-12]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/__init__.py", line 247, in spin
+[sector_tuner-12]     executor.spin_once()
+[sector_tuner-12]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/executors.py", line 923, in spin_once
+[sector_tuner-12]     self._spin_once_impl(timeout_sec)
+[sector_tuner-12]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/executors.py", line 904, in _spin_once_impl
+[sector_tuner-12]     handler, entity, node = self.wait_for_ready_callbacks(
+[sector_tuner-12]                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[sector_tuner-12]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/executors.py", line 874, in wait_for_ready_callbacks
+[sector_tuner-12]     return next(self._cb_iter)
+[sector_tuner-12]            ^^^^^^^^^^^^^^^^^^^
+[sector_tuner-12]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/executors.py", line 778, in _wait_for_ready_callbacks
+[sector_tuner-12]     wait_set.wait(timeout_nsec)
+[sector_tuner-12] KeyboardInterrupt
+[opponent_trajectory-25] Traceback (most recent call last):
+[opponent_trajectory-25]   File "/home/hotao/roboracer_ws/install/gp_traj_predictor/lib/gp_traj_predictor/opponent_trajectory", line 504, in <module>
+[opponent_trajectory-25]     node.make_opponent_trajectory()
+[opponent_trajectory-25]   File "/home/hotao/roboracer_ws/install/gp_traj_predictor/lib/gp_traj_predictor/opponent_trajectory", line 134, in make_opponent_trajectory
+[opponent_trajectory-25]     while rclpy.ok():
+[opponent_trajectory-25]           ^^^^^^^^^^
+[opponent_trajectory-25]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/utilities.py", line 70, in ok
+[opponent_trajectory-25]     return context.ok()
+[opponent_trajectory-25]            ^^^^^^^^^^^^
+[opponent_trajectory-25]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/context.py", line 115, in ok
+[opponent_trajectory-25]     return self.__context.ok()
+[opponent_trajectory-25]            ^^^^^^^^^^^^^^^^^^^
+[opponent_trajectory-25] KeyboardInterrupt
+[opponent_trajectory-25] 
+[opponent_trajectory-25] During handling of the above exception, another exception occurred:
+[opponent_trajectory-25] 
+[opponent_trajectory-25] Traceback (most recent call last):
+[opponent_trajectory-25]   File "/home/hotao/roboracer_ws/install/gp_traj_predictor/lib/gp_traj_predictor/opponent_trajectory", line 509, in <module>
+[opponent_trajectory-25]     rclpy.shutdown()
+[opponent_trajectory-25]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/__init__.py", line 134, in shutdown
+[opponent_trajectory-25]     _shutdown(context=context)
+[opponent_trajectory-25]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/utilities.py", line 82, in shutdown
+[opponent_trajectory-25]     context.shutdown()
+[opponent_trajectory-25]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/context.py", line 129, in shutdown
+[opponent_trajectory-25]     self.__context.shutdown()
+[opponent_trajectory-25] rclpy._rclpy_pybind11.RCLError: failed to shutdown: rcl_shutdown already called on the given context, at /home/runner/conda-bld/bld/rattler-build_ros-jazzy-rcl_1771185627/work/ros-jazzy-rcl/src/work/src/rcl/init.c:333
+[opponent_controller-5] [INFO] READ_GLOBAL_WAYPOINTS: Reading global waypoints from /home/hotao/roboracer_ws/src/racing_stack/stack_master/maps/0815test1/global_waypoints.json
+[opponent_controller-5] Traceback (most recent call last):
+[opponent_controller-5]   File "/home/hotao/roboracer_ws/install/virtual_perception/lib/virtual_perception/opponent_controller", line 33, in <module>
+[opponent_controller-5]     sys.exit(load_entry_point('virtual-perception', 'console_scripts', 'opponent_controller')())
+[opponent_controller-5]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[opponent_controller-5]   File "/home/hotao/roboracer_ws/build/virtual_perception/virtual_perception/opponent_controller.py", line 349, in main
+[opponent_controller-5]     rclpy.spin(node)
+[opponent_controller-5]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/__init__.py", line 247, in spin
+[opponent_controller-5]     executor.spin_once()
+[opponent_controller-5]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/executors.py", line 923, in spin_once
+[opponent_controller-5]     self._spin_once_impl(timeout_sec)
+[opponent_controller-5]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/executors.py", line 904, in _spin_once_impl
+[opponent_controller-5]     handler, entity, node = self.wait_for_ready_callbacks(
+[opponent_controller-5]                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[opponent_controller-5]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/executors.py", line 874, in wait_for_ready_callbacks
+[opponent_controller-5]     return next(self._cb_iter)
+[opponent_controller-5]            ^^^^^^^^^^^^^^^^^^^
+[opponent_controller-5]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/executors.py", line 778, in _wait_for_ready_callbacks
+[opponent_controller-5]     wait_set.wait(timeout_nsec)
+[opponent_controller-5] KeyboardInterrupt
+[frenet_conversion_server_node-14] Traceback (most recent call last):
+[frenet_conversion_server_node-14]   File "/home/hotao/roboracer_ws/install/frenet_conversion_server/lib/frenet_conversion_server/frenet_conversion_server_node", line 33, in <module>
+[frenet_conversion_server_node-14]     sys.exit(load_entry_point('frenet-conversion-server', 'console_scripts', 'frenet_conversion_server_node')())
+[frenet_conversion_server_node-14]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[frenet_conversion_server_node-14]   File "/home/hotao/roboracer_ws/build/frenet_conversion_server/frenet_conversion_server/frenet_conversion_server_node.py", line 127, in main
+[frenet_conversion_server_node-14]     rclpy.spin(frenet_conversion_server)
+[frenet_conversion_server_node-14]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/__init__.py", line 247, in spin
+[frenet_conversion_server_node-14]     executor.spin_once()
+[frenet_conversion_server_node-14]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/executors.py", line 923, in spin_once
+[frenet_conversion_server_node-14]     self._spin_once_impl(timeout_sec)
+[frenet_conversion_server_node-14]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/executors.py", line 904, in _spin_once_impl
+[frenet_conversion_server_node-14]     handler, entity, node = self.wait_for_ready_callbacks(
+[frenet_conversion_server_node-14]                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[frenet_conversion_server_node-14]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/executors.py", line 874, in wait_for_ready_callbacks
+[frenet_conversion_server_node-14]     return next(self._cb_iter)
+[frenet_conversion_server_node-14]            ^^^^^^^^^^^^^^^^^^^
+[frenet_conversion_server_node-14]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/executors.py", line 778, in _wait_for_ready_callbacks
+[frenet_conversion_server_node-14]     wait_set.wait(timeout_nsec)
+[frenet_conversion_server_node-14] KeyboardInterrupt
+[opponent_vehicle-4] Traceback (most recent call last):
+[opponent_vehicle-4]   File "/home/hotao/roboracer_ws/install/virtual_perception/lib/virtual_perception/opponent_vehicle", line 33, in <module>
+[opponent_vehicle-4]     sys.exit(load_entry_point('virtual-perception', 'console_scripts', 'opponent_vehicle')())
+[lap_analyser-16] Traceback (most recent call last):
+[lap_analyser-16]   File "/home/hotao/roboracer_ws/install/lap_analyser/lib/lap_analyser/lap_analyser", line 33, in <module>
+[lap_analyser-16]     sys.exit(load_entry_point('lap-analyser', 'console_scripts', 'lap_analyser')())
+[lap_analyser-16]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[lap_analyser-16]   File "/home/hotao/roboracer_ws/build/lap_analyser/lap_analyser/lap_analyser.py", line 406, in main
+[lap_analyser-16]     rclpy.spin(lap_analyser)
+[lap_analyser-16]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/__init__.py", line 247, in spin
+[lap_analyser-16]     executor.spin_once()
+[lap_analyser-16]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/executors.py", line 923, in spin_once
+[lap_analyser-16]     self._spin_once_impl(timeout_sec)
+[lap_analyser-16]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/executors.py", line 904, in _spin_once_impl
+[lap_analyser-16]     handler, entity, node = self.wait_for_ready_callbacks(
+[lap_analyser-16]                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[lap_analyser-16]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/executors.py", line 874, in wait_for_ready_callbacks
+[lap_analyser-16]     return next(self._cb_iter)
+[lap_analyser-16]            ^^^^^^^^^^^^^^^^^^^
+[lap_analyser-16]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/executors.py", line 778, in _wait_for_ready_callbacks
+[lap_analyser-16]     wait_set.wait(timeout_nsec)
+[lap_analyser-16] KeyboardInterrupt
+[detect-17] [INFO] [1786774858.325335868] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[frenet_odom_republisher_node-15] Traceback (most recent call last):
+[frenet_odom_republisher_node-15]   File "/home/hotao/roboracer_ws/install/frenet_odom_republisher/lib/frenet_odom_republisher/frenet_odom_republisher_node", line 33, in <module>
+[frenet_odom_republisher_node-15]     sys.exit(load_entry_point('frenet-odom-republisher', 'console_scripts', 'frenet_odom_republisher_node')())
+[frenet_odom_republisher_node-15]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[frenet_odom_republisher_node-15]   File "/home/hotao/roboracer_ws/build/frenet_odom_republisher/frenet_odom_republisher/frenet_odom_republisher_node.py", line 73, in main
+[frenet_odom_republisher_node-15]     rclpy.spin(frenet_odom_republisher)
+[frenet_odom_republisher_node-15]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/__init__.py", line 247, in spin
+[frenet_odom_republisher_node-15]     executor.spin_once()
+[frenet_odom_republisher_node-15]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/executors.py", line 923, in spin_once
+[frenet_odom_republisher_node-15]     self._spin_once_impl(timeout_sec)
+[frenet_odom_republisher_node-15]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/executors.py", line 904, in _spin_once_impl
+[frenet_odom_republisher_node-15]     handler, entity, node = self.wait_for_ready_callbacks(
+[frenet_odom_republisher_node-15]                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[frenet_odom_republisher_node-15]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/executors.py", line 874, in wait_for_ready_callbacks
+[frenet_odom_republisher_node-15]     return next(self._cb_iter)
+[frenet_odom_republisher_node-15]            ^^^^^^^^^^^^^^^^^^^
+[frenet_odom_republisher_node-15]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/executors.py", line 778, in _wait_for_ready_callbacks
+[frenet_odom_republisher_node-15]     wait_set.wait(timeout_nsec)
+[frenet_odom_republisher_node-15] KeyboardInterrupt
+[robot_state_publisher-2] [INFO] [1786774858.325730746] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[ot_interpolator-13] Traceback (most recent call last):
+[ot_interpolator-13]   File "/home/hotao/roboracer_ws/install/overtaking_sector_tuner/lib/overtaking_sector_tuner/ot_interpolator", line 33, in <module>
+[ot_interpolator-13]     sys.exit(load_entry_point('overtaking-sector-tuner', 'console_scripts', 'ot_interpolator')())
+[ot_interpolator-13]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[ot_interpolator-13]   File "/home/hotao/roboracer_ws/build/overtaking_sector_tuner/overtaking_sector_tuner/ot_interpolator.py", line 473, in main
+[ot_interpolator-13]     rclpy.spin(node)
+[ot_interpolator-13]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/__init__.py", line 247, in spin
+[ot_interpolator-13]     executor.spin_once()
+[ot_interpolator-13]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/executors.py", line 923, in spin_once
+[ot_interpolator-13]     self._spin_once_impl(timeout_sec)
+[ot_interpolator-13]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/executors.py", line 904, in _spin_once_impl
+[ot_interpolator-13]     handler, entity, node = self.wait_for_ready_callbacks(
+[ot_interpolator-13]                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[ot_interpolator-13]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/executors.py", line 874, in wait_for_ready_callbacks
+[ot_interpolator-13]     return next(self._cb_iter)
+[ot_interpolator-13]            ^^^^^^^^^^^^^^^^^^^
+[ot_interpolator-13]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/executors.py", line 778, in _wait_for_ready_callbacks
+[ot_interpolator-13]     wait_set.wait(timeout_nsec)
+[ot_interpolator-13] KeyboardInterrupt
+[static_obstacle_manager-6] Traceback (most recent call last):
+[static_obstacle_manager-6]   File "/home/hotao/roboracer_ws/install/virtual_perception/lib/virtual_perception/static_obstacle_manager", line 33, in <module>
+[static_obstacle_manager-6]     sys.exit(load_entry_point('virtual-perception', 'console_scripts', 'static_obstacle_manager')())
+[static_obstacle_manager-6]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[static_obstacle_manager-6]   File "/home/hotao/roboracer_ws/build/virtual_perception/virtual_perception/static_obstacle_manager.py", line 98, in main
+[static_obstacle_manager-6]     rclpy.spin(node)
+[static_obstacle_manager-6]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/__init__.py", line 247, in spin
+[static_obstacle_manager-6]     executor.spin_once()
+[static_obstacle_manager-6]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/executors.py", line 923, in spin_once
+[static_obstacle_manager-6]     self._spin_once_impl(timeout_sec)
+[static_obstacle_manager-6]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/executors.py", line 904, in _spin_once_impl
+[static_obstacle_manager-6]     handler, entity, node = self.wait_for_ready_callbacks(
+[static_obstacle_manager-6]                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[static_obstacle_manager-6]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/executors.py", line 874, in wait_for_ready_callbacks
+[static_obstacle_manager-6]     return next(self._cb_iter)
+[static_obstacle_manager-6]            ^^^^^^^^^^^^^^^^^^^
+[static_obstacle_manager-6]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/executors.py", line 778, in _wait_for_ready_callbacks
+[static_obstacle_manager-6]     wait_set.wait(timeout_nsec)
+[static_obstacle_manager-6] KeyboardInterrupt
+[opponent_vehicle-4]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[opponent_vehicle-4]   File "/home/hotao/roboracer_ws/build/virtual_perception/virtual_perception/opponent_vehicle.py", line 403, in main
+[opponent_vehicle-4]     rclpy.spin(node)
+[opponent_vehicle-4]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/__init__.py", line 247, in spin
+[opponent_vehicle-4]     executor.spin_once()
+[opponent_vehicle-4]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/executors.py", line 923, in spin_once
+[opponent_vehicle-4]     self._spin_once_impl(timeout_sec)
+[opponent_vehicle-4]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/executors.py", line 904, in _spin_once_impl
+[opponent_vehicle-4]     handler, entity, node = self.wait_for_ready_callbacks(
+[opponent_vehicle-4]                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[opponent_vehicle-4]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/executors.py", line 874, in wait_for_ready_callbacks
+[opponent_vehicle-4]     return next(self._cb_iter)
+[opponent_vehicle-4]            ^^^^^^^^^^^^^^^^^^^
+[opponent_vehicle-4]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/executors.py", line 778, in _wait_for_ready_callbacks
+[opponent_vehicle-4]     wait_set.wait(timeout_nsec)
+[opponent_vehicle-4] KeyboardInterrupt
+[tracking_merger-8] Traceback (most recent call last):
+[tracking_merger-8]   File "/home/hotao/roboracer_ws/install/virtual_perception/lib/virtual_perception/tracking_merger", line 33, in <module>
+[tracking_merger-8]     sys.exit(load_entry_point('virtual-perception', 'console_scripts', 'tracking_merger')())
+[tracking_merger-8]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[tracking_merger-8]   File "/home/hotao/roboracer_ws/build/virtual_perception/virtual_perception/tracking_merger.py", line 141, in main
+[tracking_merger-8]     rclpy.spin(node)
+[tracking_merger-8]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/__init__.py", line 247, in spin
+[tracking_merger-8]     executor.spin_once()
+[tracking_merger-8]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/executors.py", line 923, in spin_once
+[tracking_merger-8]     self._spin_once_impl(timeout_sec)
+[tracking_merger-8]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/executors.py", line 904, in _spin_once_impl
+[tracking_merger-8]     handler, entity, node = self.wait_for_ready_callbacks(
+[tracking_merger-8]                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[tracking_merger-8]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/executors.py", line 874, in wait_for_ready_callbacks
+[tracking_merger-8]     return next(self._cb_iter)
+[tracking_merger-8]            ^^^^^^^^^^^^^^^^^^^
+[tracking_merger-8]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/executors.py", line 778, in _wait_for_ready_callbacks
+[tracking_merger-8]     wait_set.wait(timeout_nsec)
+[tracking_merger-8] KeyboardInterrupt
+[gym_bridge-1] [INFO] [1786774859.069020816] [bridge]: Exiting gym_bridge
+[gym_bridge-1] Failed to publish log message to rosout: publisher's context is invalid, at /home/runner/conda-bld/bld/rattler-build_ros-jazzy-rcl_1771185627/work/ros-jazzy-rcl/src/work/src/rcl/publisher.c:423
+[INFO] [robot_state_publisher-3]: process has finished cleanly [pid 126012]
+[INFO] [robot_state_publisher-2]: process has finished cleanly [pid 126010]
+[simple_mux_node.py-10] Traceback (most recent call last):
+[simple_mux_node.py-10]   File "/home/hotao/roboracer_ws/install/stack_master/lib/stack_master/simple_mux_node.py", line 163, in <module>
+[simple_mux_node.py-10]     main()
+[simple_mux_node.py-10]   File "/home/hotao/roboracer_ws/install/stack_master/lib/stack_master/simple_mux_node.py", line 159, in main
+[simple_mux_node.py-10]     rclpy.shutdown()
+[simple_mux_node.py-10]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/__init__.py", line 134, in shutdown
+[simple_mux_node.py-10]     _shutdown(context=context)
+[simple_mux_node.py-10]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/utilities.py", line 82, in shutdown
+[simple_mux_node.py-10]     context.shutdown()
+[simple_mux_node.py-10]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/context.py", line 129, in shutdown
+[simple_mux_node.py-10]     self.__context.shutdown()
+[simple_mux_node.py-10] rclpy._rclpy_pybind11.RCLError: failed to shutdown: rcl_shutdown already called on the given context, at /home/runner/conda-bld/bld/rattler-build_ros-jazzy-rcl_1771185627/work/ros-jazzy-rcl/src/work/src/rcl/init.c:333
+[ERROR] [simple_mux_node.py-10]: process has died [pid 126032, exit code 1, cmd '/home/hotao/roboracer_ws/install/stack_master/lib/stack_master/simple_mux_node.py --ros-args -r __node:=simple_mux --params-file /home/hotao/roboracer_ws/install/stack_master/share/stack_master/config/SIM/vehicle_config.yaml --params-file /tmp/launch_params_g8kvjqb2 --params-file /tmp/launch_params_1hn8vkx6 --params-file /tmp/launch_params_bklhmhv4 --params-file /tmp/launch_params_7q13k0cw --params-file /tmp/launch_params_ohvlrwjg'].
+[ERROR] [opponent_controller-5]: process has died [pid 126016, exit code -2, cmd '/home/hotao/roboracer_ws/install/virtual_perception/lib/virtual_perception/opponent_controller --ros-args -r __node:=opponent_controller --params-file /tmp/launch_params_7lqhaoc1 --params-file /tmp/launch_params_3j3chnp8'].
+[opp_prediction-27] [Opp. Pred.] Dynamic reconf triggered new params:
+[opp_prediction-27]  N time stepts: 200, 
+[opp_prediction-27]  dt: 0.02 [s], 
+[opp_prediction-27]  save_distance_front: 6.0 [m], 
+[opp_prediction-27]  max_expire_counter: 10
+[opp_prediction-27] Traceback (most recent call last):
+[opp_prediction-27]   File "/home/hotao/roboracer_ws/install/gp_traj_predictor/lib/gp_traj_predictor/opp_prediction", line 512, in <module>
+[opp_prediction-27]     node.loop()
+[opp_prediction-27]   File "/home/hotao/roboracer_ws/install/gp_traj_predictor/lib/gp_traj_predictor/opp_prediction", line 297, in loop
+[opp_prediction-27]     self.opponent_trajectory_cb(self.wait_for_message(self.opponent_traj_topic, OpponentTrajectory))
+[opp_prediction-27]                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[opp_prediction-27]   File "/home/hotao/roboracer_ws/install/gp_traj_predictor/lib/gp_traj_predictor/prediction_node.py", line 30, in wait_for_message
+[opp_prediction-27]     executor.spin_once(timeout_sec=0.1)
+[opp_prediction-27]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/executors.py", line 923, in spin_once
+[opp_prediction-27]     self._spin_once_impl(timeout_sec)
+[opp_prediction-27]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/executors.py", line 904, in _spin_once_impl
+[opp_prediction-27]     handler, entity, node = self.wait_for_ready_callbacks(
+[opp_prediction-27]                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[opp_prediction-27]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/executors.py", line 874, in wait_for_ready_callbacks
+[opp_prediction-27]     return next(self._cb_iter)
+[opp_prediction-27]            ^^^^^^^^^^^^^^^^^^^
+[opp_prediction-27]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/executors.py", line 778, in _wait_for_ready_callbacks
+[opp_prediction-27]     wait_set.wait(timeout_nsec)
+[opp_prediction-27] KeyboardInterrupt
+[opp_prediction-27] 
+[opp_prediction-27] During handling of the above exception, another exception occurred:
+[opp_prediction-27] 
+[opp_prediction-27] Traceback (most recent call last):
+[opp_prediction-27]   File "/home/hotao/roboracer_ws/install/gp_traj_predictor/lib/gp_traj_predictor/opp_prediction", line 515, in <module>
+[opp_prediction-27]     rclpy.shutdown()
+[opp_prediction-27]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/__init__.py", line 134, in shutdown
+[opp_prediction-27]     _shutdown(context=context)
+[opp_prediction-27]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/utilities.py", line 82, in shutdown
+[opp_prediction-27]     context.shutdown()
+[opp_prediction-27]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/context.py", line 129, in shutdown
+[opp_prediction-27]     self.__context.shutdown()
+[opp_prediction-27] rclpy._rclpy_pybind11.RCLError: failed to shutdown: rcl_shutdown already called on the given context, at /home/runner/conda-bld/bld/rattler-build_ros-jazzy-rcl_1771185627/work/ros-jazzy-rcl/src/work/src/rcl/init.c:333
+[keyboard_joy_node.py-9] === Keyboard Joy Node ===
+[keyboard_joy_node.py-9]   Up / Down   : Forward / Reverse (resets on release)
+[keyboard_joy_node.py-9]   Left / Right: Steer left / right (resets on release)
+[keyboard_joy_node.py-9]   Space       : Stop (speed and steering = 0)
+[keyboard_joy_node.py-9]   H           : Human Drive mode
+[keyboard_joy_node.py-9]   A           : Auto Drive mode
+[keyboard_joy_node.py-9]   Ctrl+C      : Quit (in this terminal)
+[keyboard_joy_node.py-9] Traceback (most recent call last):
+[keyboard_joy_node.py-9]   File "/home/hotao/roboracer_ws/install/stack_master/lib/stack_master/keyboard_joy_node.py", line 124, in <module>
+[keyboard_joy_node.py-9]     main()
+[keyboard_joy_node.py-9]   File "/home/hotao/roboracer_ws/install/stack_master/lib/stack_master/keyboard_joy_node.py", line 120, in main
+[keyboard_joy_node.py-9]     rclpy.shutdown()
+[keyboard_joy_node.py-9]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/__init__.py", line 134, in shutdown
+[keyboard_joy_node.py-9]     _shutdown(context=context)
+[keyboard_joy_node.py-9]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/utilities.py", line 82, in shutdown
+[keyboard_joy_node.py-9]     context.shutdown()
+[keyboard_joy_node.py-9]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/context.py", line 129, in shutdown
+[keyboard_joy_node.py-9]     self.__context.shutdown()
+[keyboard_joy_node.py-9] rclpy._rclpy_pybind11.RCLError: failed to shutdown: rcl_shutdown already called on the given context, at /home/runner/conda-bld/bld/rattler-build_ros-jazzy-rcl_1771185627/work/ros-jazzy-rcl/src/work/src/rcl/init.c:333
+[ERROR] [lap_analyser-16]: process has died [pid 126062, exit code -2, cmd '/home/hotao/roboracer_ws/install/lap_analyser/lib/lap_analyser/lap_analyser --ros-args -r __node:=lap_analyser --params-file /tmp/launch_params_oegma7iy'].
+[ERROR] [opp_prediction-27]: process has died [pid 126105, exit code 1, cmd '/home/hotao/roboracer_ws/install/gp_traj_predictor/lib/gp_traj_predictor/opp_prediction --ros-args -r __node:=opponent_propagation_predictor'].
+[ERROR] [frenet_conversion_server_node-14]: process has died [pid 126058, exit code -2, cmd '/home/hotao/roboracer_ws/install/frenet_conversion_server/lib/frenet_conversion_server/frenet_conversion_server_node --ros-args -r __node:=frenet_conversion_server_node --params-file /tmp/launch_params_s7lh2b9x'].
+[ERROR] [keyboard_joy_node.py-9]: process has died [pid 126028, exit code 1, cmd '/home/hotao/roboracer_ws/install/stack_master/lib/stack_master/keyboard_joy_node.py --ros-args -r __node:=keyboard_joy'].
+[change_avoidance_node-23] Traceback (most recent call last):
+[change_avoidance_node-23]   File "/home/hotao/roboracer_ws/install/lane_change_planner/lib/lane_change_planner/change_avoidance_node", line 33, in <module>
+[change_avoidance_node-23]     sys.exit(load_entry_point('lane-change-planner', 'console_scripts', 'change_avoidance_node')())
+[change_avoidance_node-23]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[change_avoidance_node-23]   File "/home/hotao/roboracer_ws/build/lane_change_planner/lane_change_planner/change_avoidance_node.py", line 1040, in main
+[change_avoidance_node-23]     rclpy.shutdown()
+[change_avoidance_node-23]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/__init__.py", line 134, in shutdown
+[change_avoidance_node-23]     _shutdown(context=context)
+[change_avoidance_node-23]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/utilities.py", line 82, in shutdown
+[change_avoidance_node-23]     context.shutdown()
+[change_avoidance_node-23]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/context.py", line 129, in shutdown
+[change_avoidance_node-23]     self.__context.shutdown()
+[change_avoidance_node-23] rclpy._rclpy_pybind11.RCLError: failed to shutdown: rcl_shutdown already called on the given context, at /home/runner/conda-bld/bld/rattler-build_ros-jazzy-rcl_1771185627/work/ros-jazzy-rcl/src/work/src/rcl/init.c:333
+[taskset-26] Traceback (most recent call last):
+[taskset-26]   File "/home/hotao/roboracer_ws/install/gp_traj_predictor/lib/gp_traj_predictor/gaussian_process_opp_traj", line 472, in <module>
+[taskset-26]     node.get_gp_opp_traj()
+[taskset-26]   File "/home/hotao/roboracer_ws/install/gp_traj_predictor/lib/gp_traj_predictor/gaussian_process_opp_traj", line 87, in get_gp_opp_traj
+[taskset-26]     proj_opp_traj = self.wait_for_message('/proj_opponent_trajectory', ProjOppTraj)
+[taskset-26]                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[taskset-26]   File "/home/hotao/roboracer_ws/install/gp_traj_predictor/lib/gp_traj_predictor/prediction_node.py", line 30, in wait_for_message
+[taskset-26]     executor.spin_once(timeout_sec=0.1)
+[taskset-26]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/executors.py", line 923, in spin_once
+[taskset-26]     self._spin_once_impl(timeout_sec)
+[taskset-26]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/executors.py", line 904, in _spin_once_impl
+[taskset-26]     handler, entity, node = self.wait_for_ready_callbacks(
+[taskset-26]                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[taskset-26]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/executors.py", line 874, in wait_for_ready_callbacks
+[taskset-26]     return next(self._cb_iter)
+[taskset-26]            ^^^^^^^^^^^^^^^^^^^
+[taskset-26]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/executors.py", line 778, in _wait_for_ready_callbacks
+[taskset-26]     wait_set.wait(timeout_nsec)
+[taskset-26] KeyboardInterrupt
+[taskset-26] 
+[taskset-26] During handling of the above exception, another exception occurred:
+[taskset-26] 
+[taskset-26] Traceback (most recent call last):
+[taskset-26]   File "/home/hotao/roboracer_ws/install/gp_traj_predictor/lib/gp_traj_predictor/gaussian_process_opp_traj", line 475, in <module>
+[taskset-26]     rclpy.shutdown()
+[taskset-26]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/__init__.py", line 134, in shutdown
+[taskset-26]     _shutdown(context=context)
+[taskset-26]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/utilities.py", line 82, in shutdown
+[taskset-26]     context.shutdown()
+[taskset-26]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/context.py", line 129, in shutdown
+[taskset-26]     self.__context.shutdown()
+[taskset-26] rclpy._rclpy_pybind11.RCLError: failed to shutdown: rcl_shutdown already called on the given context, at /home/runner/conda-bld/bld/rattler-build_ros-jazzy-rcl_1771185627/work/ros-jazzy-rcl/src/work/src/rcl/init.c:333
+[ERROR] [opponent_trajectory-25]: process has died [pid 126094, exit code 1, cmd '/home/hotao/roboracer_ws/install/gp_traj_predictor/lib/gp_traj_predictor/opponent_trajectory --ros-args -r __node:=OpponentHalflap'].
+[ERROR] [taskset-26]: process has died [pid 126103, exit code 1, cmd 'taskset -c 1 /home/hotao/roboracer_ws/install/gp_traj_predictor/lib/gp_traj_predictor/gaussian_process_opp_traj --ros-args -r __node:=GP_trajectory'].
+[ERROR] [change_avoidance_node-23]: process has died [pid 126090, exit code 1, cmd '/home/hotao/roboracer_ws/install/lane_change_planner/lib/lane_change_planner/change_avoidance_node --ros-args -r __node:=planner_change --params-file /tmp/launch_params_7msva6vw'].
+[recovery_spliner_node-20] Traceback (most recent call last):
+[recovery_spliner_node-20]   File "/home/hotao/roboracer_ws/install/recovery_spliner/lib/recovery_spliner/recovery_spliner_node", line 33, in <module>
+[recovery_spliner_node-20]     sys.exit(load_entry_point('recovery-spliner', 'console_scripts', 'recovery_spliner_node')())
+[recovery_spliner_node-20]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[recovery_spliner_node-20]   File "/home/hotao/roboracer_ws/build/recovery_spliner/recovery_spliner/recovery_spliner_node.py", line 723, in main
+[recovery_spliner_node-20]     rclpy.shutdown()
+[recovery_spliner_node-20]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/__init__.py", line 134, in shutdown
+[recovery_spliner_node-20]     _shutdown(context=context)
+[recovery_spliner_node-20]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/utilities.py", line 82, in shutdown
+[recovery_spliner_node-20]     context.shutdown()
+[recovery_spliner_node-20]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/context.py", line 129, in shutdown
+[recovery_spliner_node-20]     self.__context.shutdown()
+[recovery_spliner_node-20] rclpy._rclpy_pybind11.RCLError: failed to shutdown: rcl_shutdown already called on the given context, at /home/runner/conda-bld/bld/rattler-build_ros-jazzy-rcl_1771185627/work/ros-jazzy-rcl/src/work/src/rcl/init.c:333
+[start_spline_node_v2-21] Traceback (most recent call last):
+[start_spline_node_v2-21]   File "/home/hotao/roboracer_ws/install/spliner/lib/spliner/start_spline_node_v2", line 33, in <module>
+[start_spline_node_v2-21]     sys.exit(load_entry_point('spliner', 'console_scripts', 'start_spline_node_v2')())
+[start_spline_node_v2-21]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[start_spline_node_v2-21]   File "/home/hotao/roboracer_ws/build/spliner/spliner/start_spline_node_v2.py", line 464, in main
+[start_spline_node_v2-21]     rclpy.shutdown()
+[start_spline_node_v2-21]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/__init__.py", line 134, in shutdown
+[start_spline_node_v2-21]     _shutdown(context=context)
+[start_spline_node_v2-21]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/utilities.py", line 82, in shutdown
+[start_spline_node_v2-21]     context.shutdown()
+[start_spline_node_v2-21]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/context.py", line 129, in shutdown
+[start_spline_node_v2-21]     self.__context.shutdown()
+[start_spline_node_v2-21] rclpy._rclpy_pybind11.RCLError: failed to shutdown: rcl_shutdown already called on the given context, at /home/runner/conda-bld/bld/rattler-build_ros-jazzy-rcl_1771185627/work/ros-jazzy-rcl/src/work/src/rcl/init.c:333
+[INFO] [static_avoidance_node-22]: process has finished cleanly [pid 126088]
+[ERROR] [start_spline_node_v2-21]: process has died [pid 126072, exit code 1, cmd '/home/hotao/roboracer_ws/install/spliner/lib/spliner/start_spline_node_v2 --ros-args -r __node:=start_planner'].
+[ERROR] [static_obstacle_manager-6]: process has died [pid 126018, exit code -2, cmd '/home/hotao/roboracer_ws/install/virtual_perception/lib/virtual_perception/static_obstacle_manager --ros-args -r __node:=static_obstacle_manager'].
+[ERROR] [recovery_spliner_node-20]: process has died [pid 126070, exit code 1, cmd '/home/hotao/roboracer_ws/install/recovery_spliner/lib/recovery_spliner/recovery_spliner_node --ros-args -r __node:=recovery_spliner_node'].
+[ERROR] [frenet_odom_republisher_node-15]: process has died [pid 126060, exit code -2, cmd '/home/hotao/roboracer_ws/install/frenet_odom_republisher/lib/frenet_odom_republisher/frenet_odom_republisher_node --ros-args -r __node:=frenet_odom_republisher -r /car_state/frenet/odom:=/car_state/odom_frenet'].
+[ERROR] [tracking_merger-8]: process has died [pid 126024, exit code -2, cmd '/home/hotao/roboracer_ws/install/virtual_perception/lib/virtual_perception/tracking_merger --ros-args -r __node:=tracking_merger'].
+[update_waypoints-24] Traceback (most recent call last):
+[update_waypoints-24]   File "/home/hotao/roboracer_ws/install/lane_change_planner/lib/lane_change_planner/update_waypoints", line 33, in <module>
+[update_waypoints-24]     sys.exit(load_entry_point('lane-change-planner', 'console_scripts', 'update_waypoints')())
+[update_waypoints-24]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[update_waypoints-24]   File "/home/hotao/roboracer_ws/build/lane_change_planner/lane_change_planner/update_waypoints.py", line 168, in main
+[update_waypoints-24]     rclpy.shutdown()
+[update_waypoints-24]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/__init__.py", line 134, in shutdown
+[update_waypoints-24]     _shutdown(context=context)
+[update_waypoints-24]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/utilities.py", line 82, in shutdown
+[update_waypoints-24]     context.shutdown()
+[update_waypoints-24]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/context.py", line 129, in shutdown
+[update_waypoints-24]     self.__context.shutdown()
+[update_waypoints-24] rclpy._rclpy_pybind11.RCLError: failed to shutdown: rcl_shutdown already called on the given context, at /home/runner/conda-bld/bld/rattler-build_ros-jazzy-rcl_1771185627/work/ros-jazzy-rcl/src/work/src/rcl/init.c:333
+[ERROR] [ot_interpolator-13]: process has died [pid 126048, exit code -2, cmd '/home/hotao/roboracer_ws/install/overtaking_sector_tuner/lib/overtaking_sector_tuner/ot_interpolator --ros-args -r __node:=ot_sector_tuner --params-file /home/hotao/roboracer_ws/install/stack_master/share/stack_master/maps/0815test1/ot_sectors.yaml --params-file /tmp/launch_params_i4lntr8s'].
+[ERROR] [update_waypoints-24]: process has died [pid 126092, exit code 1, cmd '/home/hotao/roboracer_ws/install/lane_change_planner/lib/lane_change_planner/update_waypoints --ros-args -r __node:=waypoint_updater'].
+[ERROR] [opponent_vehicle-4]: process has died [pid 126014, exit code -2, cmd '/home/hotao/roboracer_ws/install/virtual_perception/lib/virtual_perception/opponent_vehicle --ros-args -r __node:=opponent_vehicle --params-file /tmp/launch_params_j488j3lg --params-file /tmp/launch_params_scn4fnsd --params-file /tmp/launch_params_siszz7u2'].
+[tracking_node-18] Traceback (most recent call last):
+[tracking_node-18]   File "/home/hotao/roboracer_ws/install/perception/lib/perception/tracking_node", line 966, in <module>
+[tracking_node-18]     main()
+[tracking_node-18]   File "/home/hotao/roboracer_ws/install/perception/lib/perception/tracking_node", line 962, in main
+[tracking_node-18]     rclpy.shutdown()
+[tracking_node-18]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/__init__.py", line 134, in shutdown
+[tracking_node-18]     _shutdown(context=context)
+[tracking_node-18]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/utilities.py", line 82, in shutdown
+[tracking_node-18]     context.shutdown()
+[tracking_node-18]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/context.py", line 129, in shutdown
+[tracking_node-18]     self.__context.shutdown()
+[tracking_node-18] rclpy._rclpy_pybind11.RCLError: failed to shutdown: rcl_shutdown already called on the given context, at /home/runner/conda-bld/bld/rattler-build_ros-jazzy-rcl_1771185627/work/ros-jazzy-rcl/src/work/src/rcl/init.c:333
+[INFO] [detect-17]: process has finished cleanly [pid 126064]
+[ERROR] [tracking_node-18]: process has died [pid 126066, exit code 1, cmd '/home/hotao/roboracer_ws/install/perception/lib/perception/tracking_node --ros-args -r __node:=tracking --params-file /home/hotao/roboracer_ws/install/stack_master/share/stack_master/config/opponent_tracker_params.yaml -r /tracking/obstacles:=/tracking/obstacles_raw'].
+[INFO] [rviz2-29]: process has finished cleanly [pid 126575]
+[ERROR] [sector_tuner-12]: process has died [pid 126044, exit code -2, cmd '/home/hotao/roboracer_ws/install/sector_tuner/lib/sector_tuner/sector_tuner --ros-args -r __node:=speed_sector_tuner --params-file /home/hotao/roboracer_ws/install/stack_master/share/stack_master/maps/0815test1/speed_scaling.yaml --params-file /tmp/launch_params_xd9g7l9r'].
+[scan_overlay-7] Traceback (most recent call last):
+[scan_overlay-7]   File "/home/hotao/roboracer_ws/build/virtual_perception/virtual_perception/scan_overlay.py", line 195, in main
+[scan_overlay-7]     executor.spin()
+[scan_overlay-7]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/executors.py", line 359, in spin
+[scan_overlay-7]     self._spin_once_impl()
+[scan_overlay-7]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/executors.py", line 988, in _spin_once_impl
+[scan_overlay-7]     handler, entity, node = self.wait_for_ready_callbacks(
+[scan_overlay-7]                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[scan_overlay-7]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/executors.py", line 874, in wait_for_ready_callbacks
+[scan_overlay-7]     return next(self._cb_iter)
+[scan_overlay-7]            ^^^^^^^^^^^^^^^^^^^
+[scan_overlay-7]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/executors.py", line 778, in _wait_for_ready_callbacks
+[scan_overlay-7]     wait_set.wait(timeout_nsec)
+[scan_overlay-7] KeyboardInterrupt
+[scan_overlay-7] 
+[scan_overlay-7] During handling of the above exception, another exception occurred:
+[scan_overlay-7] 
+[scan_overlay-7] Traceback (most recent call last):
+[scan_overlay-7]   File "/home/hotao/roboracer_ws/install/virtual_perception/lib/virtual_perception/scan_overlay", line 33, in <module>
+[scan_overlay-7]     sys.exit(load_entry_point('virtual-perception', 'console_scripts', 'scan_overlay')())
+[scan_overlay-7]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[scan_overlay-7]   File "/home/hotao/roboracer_ws/build/virtual_perception/virtual_perception/scan_overlay.py", line 198, in main
+[scan_overlay-7]     rclpy.shutdown()
+[scan_overlay-7]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/__init__.py", line 134, in shutdown
+[scan_overlay-7]     _shutdown(context=context)
+[scan_overlay-7]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/utilities.py", line 82, in shutdown
+[scan_overlay-7]     context.shutdown()
+[scan_overlay-7]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/context.py", line 129, in shutdown
+[scan_overlay-7]     self.__context.shutdown()
+[scan_overlay-7] rclpy._rclpy_pybind11.RCLError: failed to shutdown: rcl_shutdown already called on the given context, at /home/runner/conda-bld/bld/rattler-build_ros-jazzy-rcl_1771185627/work/ros-jazzy-rcl/src/work/src/rcl/init.c:333
+[ERROR] [scan_overlay-7]: process has died [pid 126020, exit code 1, cmd '/home/hotao/roboracer_ws/install/virtual_perception/lib/virtual_perception/scan_overlay --ros-args -r __node:=scan_overlay --params-file /tmp/launch_params_an1l_88n --params-file /tmp/launch_params_vtt1v0wz --params-file /tmp/launch_params_buz90g37'].
+[controller_manager-28] Traceback (most recent call last):
+[controller_manager-28]   File "/home/hotao/roboracer_ws/install/controller/lib/controller/controller_manager", line 33, in <module>
+[controller_manager-28]     sys.exit(load_entry_point('controller', 'console_scripts', 'controller_manager')())
+[controller_manager-28]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[controller_manager-28]   File "/home/hotao/roboracer_ws/build/controller/controller/controller_manager.py", line 574, in main
+[controller_manager-28]     rclpy.shutdown()
+[controller_manager-28]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/__init__.py", line 134, in shutdown
+[controller_manager-28]     _shutdown(context=context)
+[controller_manager-28]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/utilities.py", line 82, in shutdown
+[controller_manager-28]     context.shutdown()
+[controller_manager-28]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/context.py", line 129, in shutdown
+[controller_manager-28]     self.__context.shutdown()
+[controller_manager-28] rclpy._rclpy_pybind11.RCLError: failed to shutdown: rcl_shutdown already called on the given context, at /home/runner/conda-bld/bld/rattler-build_ros-jazzy-rcl_1771185627/work/ros-jazzy-rcl/src/work/src/rcl/init.c:333
+[ERROR] [controller_manager-28]: process has died [pid 126107, exit code 1, cmd '/home/hotao/roboracer_ws/install/controller/lib/controller/controller_manager --ros-args -r __node:=controller_manager --params-file /home/hotao/roboracer_ws/install/stack_master/share/stack_master/config/controller.yaml --params-file /tmp/launch_params_babq1mam --params-file /tmp/launch_params_dihrvctn'].
+[gym_bridge-1] Traceback (most recent call last):
+[gym_bridge-1]   File "/home/hotao/roboracer_ws/install/f1tenth_gym_ros/lib/f1tenth_gym_ros/gym_bridge", line 33, in <module>
+[gym_bridge-1]     sys.exit(load_entry_point('f1tenth-gym-ros', 'console_scripts', 'gym_bridge')())
+[gym_bridge-1]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[gym_bridge-1]   File "/home/hotao/roboracer_ws/build/f1tenth_gym_ros/f1tenth_gym_ros/gym_bridge.py", line 980, in main
+[gym_bridge-1]     rclpy.shutdown()
+[gym_bridge-1]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/__init__.py", line 134, in shutdown
+[gym_bridge-1]     _shutdown(context=context)
+[gym_bridge-1]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/utilities.py", line 82, in shutdown
+[gym_bridge-1]     context.shutdown()
+[gym_bridge-1]   File "/home/hotao/miniforge3/envs/thirdimpact/lib/python3.12/site-packages/rclpy/context.py", line 129, in shutdown
+[gym_bridge-1]     self.__context.shutdown()
+[gym_bridge-1] rclpy._rclpy_pybind11.RCLError: failed to shutdown: rcl_shutdown already called on the given context, at /home/runner/conda-bld/bld/rattler-build_ros-jazzy-rcl_1771185627/work/ros-jazzy-rcl/src/work/src/rcl/init.c:333
+[gym_bridge-1] The following exception was never retrieved: Failed to publish: publisher's context is invalid, at /home/runner/conda-bld/bld/rattler-build_ros-jazzy-rcl_1771185627/work/ros-jazzy-rcl/src/work/src/rcl/publisher.c:423
+[ERROR] [gym_bridge-1]: process has died [pid 126008, exit code 1, cmd '/home/hotao/roboracer_ws/install/f1tenth_gym_ros/lib/f1tenth_gym_ros/gym_bridge --ros-args -r __node:=bridge --params-file /home/hotao/roboracer_ws/install/stack_master/share/stack_master/config/SIM/sim.yaml --params-file /tmp/launch_params_oaies4rp --params-file /tmp/launch_params_p2bhanrz --params-file /tmp/launch_params_g6y0l2pi --params-file /tmp/launch_params_9lzi2l6f --params-file /tmp/launch_params_pr0crdln -r /initialpose:=/sim/initialpose -r /scan:=/scan_raw'].
+[ERROR] [state_machine-19]: process[state_machine-19] failed to terminate '5' seconds after receiving 'SIGINT', escalating to 'SIGTERM'
+[ERROR] [global_trajectory_publisher-11]: process[global_trajectory_publisher-11] failed to terminate '5' seconds after receiving 'SIGINT', escalating to 'SIGTERM'
+[INFO] [state_machine-19]: sending signal 'SIGTERM' to process[state_machine-19]
+[INFO] [global_trajectory_publisher-11]: sending signal 'SIGTERM' to process[global_trajectory_publisher-11]
+[global_trajectory_publisher-11] [INFO] READ_GLOBAL_WAYPOINTS: Reading global waypoints from /home/hotao/roboracer_ws/src/racing_stack/stack_master/maps/0815test1/global_waypoints.json
+[INFO] [global_trajectory_publisher-11]: process has finished cleanly [pid 126042]
+[INFO] [state_machine-19]: process has finished cleanly [pid 126068]

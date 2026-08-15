@@ -225,7 +225,7 @@ class GymBridge(Node):
         self.opp_max_speed = float(sim_params.get('v_max', 8.0))
         # geometric collision stop vs virtual obstacles (overlay arch has no gym
         # collision for them): ego footprint vs f110_msgs/Obstacle boxes.
-        self.ego_half = 0.5 * float(sim_params.get('length', 0.58))
+        self.ego_half = 0.5 * float(sim_params.get('width', 0.2032))
         self.ego_collision = False
         self._dyn_obs = []     # [(x, y, half), ...]
         self._stat_obs = []
