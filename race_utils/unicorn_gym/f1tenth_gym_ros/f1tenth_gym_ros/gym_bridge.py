@@ -59,6 +59,32 @@ from transforms3d import euler
 import os.path
 
 
+def _obb_overlap(a, b):
+    """Return True when two 2-D oriented rectangles overlap.
+
+    Rectangles are ``(cx, cy, yaw, length, width)``.  The separating-axis
+    test uses both local axes of each rectangle, so vehicle length is no
+    longer incorrectly applied as a lateral collision radius.
+    """
+    axes = []
+    for rect in (a, b):
+        c, s = math.cos(rect[2]), math.sin(rect[2])
+        axes.extend(((c, s), (-s, c)))
+
+    dx, dy = b[0] - a[0], b[1] - a[1]
+    for ax, ay in axes:
+        distance = abs(dx * ax + dy * ay)
+        projected_a = 0.5 * (
+            a[3] * abs(math.cos(a[2]) * ax + math.sin(a[2]) * ay) +
+            a[4] * abs(-math.sin(a[2]) * ax + math.cos(a[2]) * ay))
+        projected_b = 0.5 * (
+            b[3] * abs(math.cos(b[2]) * ax + math.sin(b[2]) * ay) +
+            b[4] * abs(-math.sin(b[2]) * ax + math.cos(b[2]) * ay))
+        if distance >= projected_a + projected_b:
+            return False
+    return True
+
+
 class GymBridge(Node):
     def _param(self, name, default):
         """Read a parameter, declaring `default` only if it was not already
@@ -79,7 +105,9 @@ class GymBridge(Node):
         # rising-edge latches so each collision is reported once, not every tick.
         self._wall_hit_latch = False
         self._opp_hit_latch = False
+        self._stat_hit_latch = False
         self._opp_collision_now = False
+        self._stat_collision_now = False
 
         self.set_descriptor(name='ego_namespace', descriptor=ParameterDescriptor(
             type=ParameterType.PARAMETER_STRING))
@@ -223,12 +251,16 @@ class GymBridge(Node):
         self.opp_steer = 0.0
         self.opp_collision = False
         self.opp_max_speed = float(sim_params.get('v_max', 8.0))
-        # geometric collision stop vs virtual obstacles (overlay arch has no gym
-        # collision for them): ego footprint vs f110_msgs/Obstacle boxes.
-        self.ego_half = 0.5 * float(sim_params.get('length', 0.58))
+        # Geometric collision stop vs virtual obstacles (overlay obstacles are
+        # not part of gym physics).  Gym poses are at base_link/rear axle, so
+        # shift to the body centre before testing the 0.52 x 0.29 m OBB.
+        self.ego_length = float(sim_params.get('length', 0.52))
+        self.ego_width = float(sim_params.get('width', 0.29))
+        self.ego_center_offset = 0.5 * (
+            float(sim_params.get('lf', 0.162)) + float(sim_params.get('lr', 0.162)))
         self.ego_collision = False
-        self._dyn_obs = []     # [(x, y, half), ...]
-        self._stat_obs = []
+        self._dyn_obs = []     # [(rear_x, rear_y, yaw, length, width), ...]
+        self._stat_obs = []    # [(center_x, center_y, yaw, length, width), ...]
 
         init_opp = [sx1, sy1, stheta1] if self.has_opp else self.OPP_PARK_POSE
         self.obs, _, self.done, _ = self.env.reset(
@@ -341,10 +373,14 @@ class GymBridge(Node):
         # virtual obstacles (opponent + static) for the ego collision-stop check
         self.create_subscription(
             ObstacleArray, '/sim/dynamic_obstacles',
-            lambda m: setattr(self, '_dyn_obs', [(o.x_m, o.y_m, 0.5 * o.size) for o in m.obstacles]), 10)
+            lambda m: setattr(self, '_dyn_obs', [
+                (o.x_m, o.y_m, o.theta, self.ego_length, self.ego_width)
+                for o in m.obstacles]), 10)
         self.create_subscription(
             ObstacleArray, '/sim/static_obstacles',
-            lambda m: setattr(self, '_stat_obs', [(o.x_m, o.y_m, 0.5 * o.size) for o in m.obstacles]), 10)
+            lambda m: setattr(self, '_stat_obs', [
+                (o.x_m, o.y_m, o.theta, max(float(o.size), 0.05), max(float(o.size), 0.05))
+                for o in m.obstacles]), 10)
 
         if self.get_parameter('kb_teleop').value:
             self.teleop_sub = self.create_subscription(
@@ -732,13 +768,24 @@ class GymBridge(Node):
     def _check_collision(self):
         """Geometric ego-vs-virtual-obstacle collision (opponent + static).
         Overlay obstacles aren't in the gym physics, so stop the ego here."""
-        ex, ey = self.obs['poses_x'][0], self.obs['poses_y'][0]
-        # Split opponent (dynamic) vs static so telemetry can distinguish them.
-        opp_hit = any(math.hypot(ex - x, ey - y) < self.ego_half + half
-                      for x, y, half in self._dyn_obs)
-        stat_hit = any(math.hypot(ex - x, ey - y) < self.ego_half + half
-                       for x, y, half in self._stat_obs)
+        ex = self.obs['poses_x'][0]
+        ey = self.obs['poses_y'][0]
+        yaw = self.obs['poses_theta'][0]
+        ego = (
+            ex + self.ego_center_offset * math.cos(yaw),
+            ey + self.ego_center_offset * math.sin(yaw),
+            yaw, self.ego_length, self.ego_width)
+
+        # Dynamic obstacle poses also use rear-axle base_link coordinates.
+        dynamic_rects = [
+            (x + self.ego_center_offset * math.cos(theta),
+             y + self.ego_center_offset * math.sin(theta),
+             theta, length, width)
+            for x, y, theta, length, width in self._dyn_obs]
+        opp_hit = any(_obb_overlap(ego, obstacle) for obstacle in dynamic_rects)
+        stat_hit = any(_obb_overlap(ego, obstacle) for obstacle in self._stat_obs)
         self._opp_collision_now = opp_hit
+        self._stat_collision_now = stat_hit
         hit = opp_hit or stat_hit
         if hit:
             self.env.unwrapped.sim.agents[0].state[3] = 0.0   # zero ego speed now
@@ -770,6 +817,11 @@ class GymBridge(Node):
         if opp_hit and not self._opp_hit_latch:
             pitwall.event('ego: OPPONENT collision')
         self._opp_hit_latch = opp_hit
+
+        stat_hit = self._stat_collision_now
+        if stat_hit and not self._stat_hit_latch:
+            pitwall.event('ego: STATIC OBSTACLE collision')
+        self._stat_hit_latch = stat_hit
 
     def _raceline_callback(self, msg: WpntArray):
         if len(msg.wpnts) >= 3:

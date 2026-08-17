@@ -65,6 +65,12 @@ static_avoidance_planner:
     # gb_ego_width_m/2 + global_tracking.lateral_width_m = 0.145 + 0.15 = 0.295.
     raceline_clearance_m: 0.35
 
+    # Maximum number of simultaneously visible static obstacles shaped into one
+    # same-side path. The simulator supports at most three practice obstacles.
+    # All visible candidates inside `lookahead` are considered; the path returns
+    # to the raceline only after the final member of this group.
+    max_group_obstacles: 3
+
     # ===== path shape ==================================================
     # [m] Clearance from the obstacle's EDGE to the path (the car's centreline).
     # Real gap to the car's side is this minus ego_width_m/2 = 0.155 m.

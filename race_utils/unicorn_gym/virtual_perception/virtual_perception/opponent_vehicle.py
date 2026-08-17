@@ -97,6 +97,24 @@ def _yaw(q):
                       1.0 - 2.0 * (q.y * q.y + q.z * q.z))
 
 
+def _obb_overlap(a, b):
+    """Separating-axis collision test for (cx, cy, yaw, length, width)."""
+    axes = []
+    for rect in (a, b):
+        c, s = math.cos(rect[2]), math.sin(rect[2])
+        axes.extend(((c, s), (-s, c)))
+    dx, dy = b[0] - a[0], b[1] - a[1]
+    for ax, ay in axes:
+        distance = abs(dx * ax + dy * ay)
+        ra = 0.5 * (a[3] * abs(math.cos(a[2]) * ax + math.sin(a[2]) * ay) +
+                    a[4] * abs(-math.sin(a[2]) * ax + math.cos(a[2]) * ay))
+        rb = 0.5 * (b[3] * abs(math.cos(b[2]) * ax + math.sin(b[2]) * ay) +
+                    b[4] * abs(-math.sin(b[2]) * ax + math.cos(b[2]) * ay))
+        if distance >= ra + rb:
+            return False
+    return True
+
+
 class OpponentVehicle(Node):
     def __init__(self):
         super().__init__('opponent_vehicle')
@@ -110,8 +128,8 @@ class OpponentVehicle(Node):
         self.declare_parameter('opp_frame', 'opp_racecar/base_link')
         self.declare_parameter('opp_laser_frame', 'opp_racecar/laser')
         self.declare_parameter('wheelbase', 0.33)
-        self.declare_parameter('length', 0.58)
-        self.declare_parameter('width', 0.31)
+        self.declare_parameter('length', 0.52)
+        self.declare_parameter('width', 0.29)
         self.declare_parameter('box_size', 0.2)            # lidar/detection box side (m) at base_link
         self.declare_parameter('dynamic_obstacles_topic', '/sim/dynamic_obstacles')
         self.declare_parameter('opp_lidar_default_on', True)   # opp self-lidar ON once spawned
@@ -151,7 +169,7 @@ class OpponentVehicle(Node):
         self.cmd_steer = 0.0
         self.ego_pose = None   # (x, y, yaw) for the opponent's own lidar
         self._in_collision = False
-        self.static_obs = []   # [(x, y, half), ...] for opponent collision
+        self.static_obs = []   # [(cx, cy, yaw, length, width), ...]
 
         # raycaster for the opponent's OWN lidar (map + ego box).
         # NOTE: the base map scan will move to the simulator (gym) in a later step
@@ -234,17 +252,24 @@ class OpponentVehicle(Node):
             f'[opponent_vehicle] opp self-lidar {"ON" if self.opp_scan_on else "OFF"}')
 
     def _static_cb(self, msg):
-        self.static_obs = [(o.x_m, o.y_m, 0.5 * max(float(o.size), 0.05)) for o in msg.obstacles]
+        self.static_obs = [
+            (o.x_m, o.y_m, o.theta, max(float(o.size), 0.05), max(float(o.size), 0.05))
+            for o in msg.obstacles]
 
-    def _opp_collides(self, x, y):
-        """True if an opponent body centred at (x, y) overlaps a static obstacle
-        or the ego — circle-vs-circle, same simple model the gym ego collision uses."""
-        half = 0.5 * self.length
-        for sx, sy, shalf in self.static_obs:
-            if math.hypot(x - sx, y - sy) < half + shalf:
-                return True
+    def _opp_collides(self, x, y, theta):
+        """True if the opponent OBB overlaps a static obstacle or the ego."""
+        offset = 0.5 * self.wheelbase
+        opponent = (x + offset * math.cos(theta),
+                    y + offset * math.sin(theta),
+                    theta, self.length, self.width)
+        if any(_obb_overlap(opponent, obstacle) for obstacle in self.static_obs):
+            return True
         if self.ego_pose is not None:
-            if math.hypot(x - self.ego_pose[0], y - self.ego_pose[1]) < half + 0.5 * self.length:
+            ex, ey, etheta = self.ego_pose
+            ego = (ex + offset * math.cos(etheta),
+                   ey + offset * math.sin(etheta),
+                   etheta, self.length, self.width)
+            if _obb_overlap(opponent, ego):
                 return True
         return False
 
@@ -259,7 +284,7 @@ class OpponentVehicle(Node):
             nx = self.x + self.v * math.cos(self.th) * self.dt
             ny = self.y + self.v * math.sin(self.th) * self.dt
             nth = self.th + self.v / self.wheelbase * math.tan(self.cmd_steer) * self.dt
-            if self._opp_collides(nx, ny):
+            if self._opp_collides(nx, ny, nth):
                 self.v = 0.0
                 if not self._in_collision:
                     self.get_logger().warn('[opponent_vehicle] collision -> opponent stopped')
