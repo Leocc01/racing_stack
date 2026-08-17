@@ -6,6 +6,6 @@ global_planner:
     rate: 10.0                     # [hz]
     test_on_car: True              # also set True if running from a bag
     required_laps: 1               # laps to drive before calculating global waypoints
-    safety_width: 1.0              # [m] incl. car width
-    safety_width_sp: 1.0           # [m] incl. car width, for shortest-path optimization
+    safety_width: 1.2              # [m] incl. car width; +0.10 m clearance per side vs 1.0
+    safety_width_sp: 1.2           # [m] incl. car width, for shortest-path optimization
     occupancy_grid_threshold: 10
