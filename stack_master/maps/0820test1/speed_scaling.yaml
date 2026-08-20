@@ -6,25 +6,25 @@ speed_sector_tuner:
     Sector0:
       start: 0
       end: 97
-      scaling: 1.3
+      scaling: 1.0
       only_FTG: false
       no_FTG: false
     Sector1:
       start: 98
       end: 130
-      scaling: 1.1
+      scaling: 1.0
       only_FTG: false
       no_FTG: false
     Sector2:
       start: 131
       end: 232
-      scaling: 1.15
+      scaling: 1.0
       only_FTG: false
       no_FTG: false
     Sector3:
       start: 233
       end: 270
-      scaling: 1.1
+      scaling: 1.0
       only_FTG: false
       no_FTG: false
     Sector4:
@@ -36,6 +36,6 @@ speed_sector_tuner:
     Sector5:
       start: 333
       end: 401
-      scaling: 1.3
+      scaling: 1.0
       only_FTG: false
       no_FTG: false
