@@ -6,16 +6,16 @@ detect:
     # box, so a partly occluded face still passes); max_size_m is the ceiling with room for
     # a corner view plus fit noise.
     min_size_m: 0.15
-    max_size_m: 0.45
+    max_size_m: 0.60
     lambda_deg: 10
     sigma: 0.029999999999999999
     min_2_points_dist: 0.01
-    new_cluster_threshold_m: 0.40000000000000002
+    new_cluster_threshold_m: 0.20
     max_viewing_distance: 9
     # How far inside the track edge an obstacle centre must sit to be accepted [m].
     # A 0.30 m box physically cannot have its centre closer than 0.15 m to a wall, so
     # 0.25 rejects wall returns while still accepting a real obstacle placed near the edge.
-    boundaries_inflation: 0.25
+    boundaries_inflation: 0.15
     filter_kernel_size: 7
     measure: false
     from_bag: false
@@ -35,18 +35,18 @@ tracking:
     process_var_vd: 8.0
     max_dist: 0.5
     var_pub: 1.0
-    aggro_multi: 2.0
+    aggro_multi: 1.3
     dist_deletion: 7.0
     dist_infront: 8.0
-    max_std: 0.2
-    min_std: 0.16
-    min_nb_meas: 3
+    max_std: 0.3
+    min_std: 0.22
+    min_nb_meas: 8
     noMemoryMode: true
     debug_mode: false
     publish_static: true
     ratio_to_glob_path: 0.6
     ttl_dynamic: 40
     ttl_static: 12
-    vs_reset: 0.1
+    vs_reset: 0.2
     measure: false
     from_bag: false
