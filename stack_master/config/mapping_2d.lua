@@ -98,6 +98,6 @@ POSE_GRAPH.optimization_problem.odometry_translation_weight = 0
 POSE_GRAPH.optimization_problem.odometry_rotation_weight = 0
 POSE_GRAPH.constraint_builder.fast_correlative_scan_matcher.linear_search_window = 1.5  -- default: 7
 POSE_GRAPH.constraint_builder.fast_correlative_scan_matcher.angular_search_window = math.rad(30.)
-POSE_GRAPH.optimize_every_n_nodes = 100 
+POSE_GRAPH.optimize_every_n_nodes = 50  -- default: 100
 
 return options
