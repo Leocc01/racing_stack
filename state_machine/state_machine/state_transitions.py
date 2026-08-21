@@ -109,7 +109,7 @@ def FTGOnlyTransition(state_machine: "StateMachine") -> Tuple[StateType, StateTy
         if recovery_availability and state_machine._check_free_frenet(state_machine.cur_recovery_wpnts):
             return StateType.RECOVERY, StateType.RECOVERY
 
-        if state_machine._check_overtaking_mode() or state_machine._check_static_overtaking_mode():
+        if state_machine._check_preferred_overtaking_mode():
             return StateType.OVERTAKE, StateType.OVERTAKE
         else:
             return StateType.FTGONLY, StateType.FTGONLY
@@ -135,9 +135,10 @@ def ObstacleTransition(state_machine: "StateMachine", close_to_raceline) -> Tupl
     if close_to_raceline and state_machine._check_free_frenet(state_machine.cur_gb_wpnts):
         return StateType.GB_TRACK, StateType.GB_TRACK
 
-    # Overtake takeover always wins: compute it once (it mutates static_overtaking_mode)
-    # and reuse below, so the recovery-hold branch can defer to it.
-    can_overtake = state_machine._check_overtaking_mode() or state_machine._check_static_overtaking_mode()
+    # Pick the avoidance family from the nearest obstacle.  The old plain
+    # ``dynamic or static`` expression made this depend on planner timing when a
+    # static obstacle appeared while a dynamic target was being trailed.
+    can_overtake = state_machine._check_preferred_overtaking_mode()
 
     if not close_to_raceline:
         recovery_fresh = state_machine._check_latest_wpnts(

@@ -54,6 +54,17 @@ tracking:
     # band often enough to flip static obstacles to dynamic on race.launch (where
     # lane_change_planner actually acts on that flag, unlike quali.launch).
     max_std: 0.3
+    # Soft prior for the known static obstacle size. This is not a hard gate;
+    # sigma absorbs partial/merged LiDAR returns and view-angle noise.
+    static_obstacle_size_m: 0.30
+    static_size_sigma_m: 0.12
+    # Size only breaks a near-position tie; position remains the primary match.
+    size_match_weight: 0.30
+    # Static tracks use a tighter spatial gate than dynamic tracks, preventing
+    # nearby fixed obstacles from exchanging IDs through the 0.5 m general gate.
+    static_match_max_dist: 0.35
+    # Require sustained motion evidence before a stable static track is reset.
+    dynamic_confirm_frames: 3
     # 0.16 -> 0.22: below this, a measurement votes static. Widened together with
     # max_std so ordinary detection noise on a genuinely static obstacle clears
     # the static-vote bar instead of sitting in the old dead zone between the two

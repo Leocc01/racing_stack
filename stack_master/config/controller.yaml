@@ -18,6 +18,8 @@ controller_manager:
     trailing_i_gain: 0.0
     trailing_d_gain: 1.0
     blind_trailing_speed: 1.5
+    # Dynamic TRAILING holds this speed until its time-gap safety override engages.
+    trailing_fixed_speed_mps: 1.5
     static_target_hold_sec: 0.4
     static_min_standoff_m: 0.50   # hard stop distance to a static obstacle [m]
     static_resume_hysteresis_m: 0.15

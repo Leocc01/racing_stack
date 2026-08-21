@@ -308,6 +308,8 @@ class StateMachine(Node):
         self.emergency_break_d = 0.12  # [m]
         self.trailing_speed_scale = self.params.trailing_speed_scale
         self.trailing_min_speed_mps = self.params.trailing_min_speed_mps
+        self.trailing_target_switch_margin_m = self.params.trailing_target_switch_margin_m
+        self.trailing_target_id = None
 
         # Graph based variables
         self.graph_based_wpts = None
@@ -852,14 +854,21 @@ class StateMachine(Node):
         self.ot_section_check_pub.publish(Bool(data=False))
         return False
 
-    def _check_getting_closer(self, threshold_m=3.0) -> bool:
-        if (
-            len(self.obstacles_in_interest) != 0
-            and self.cur_vs - self.obstacles_in_interest[0].vs > -0.5
-        ):
-            return True
-        else:
-            return False
+    def _nearest_obstacle(self, is_static=None):
+        """Nearest ahead obstacle, optionally restricted to one obstacle family."""
+        candidates = [
+            obs for obs in self.cur_obstacles_in_interest
+            if is_static is None or bool(obs.is_static) == bool(is_static)
+        ]
+        if not candidates:
+            return None
+        return min(candidates, key=lambda obs: (obs.s_start - self.cur_s) % self.track_length)
+
+    def _check_getting_closer(self, threshold_m=3.0, is_static=None) -> bool:
+        # Array order comes from the tracker. In a mixed scene it must not decide
+        # whether the dynamic planner is authorised using a static obstacle's speed.
+        obstacle = self._nearest_obstacle(is_static=is_static)
+        return obstacle is not None and self.cur_vs - obstacle.vs > -0.5
 
     def _check_enemy_in_front(self) -> bool:
         horizon = self.gb_horizon_m
@@ -1140,8 +1149,9 @@ class StateMachine(Node):
 
     def _check_overtaking_mode(self) -> bool:
         if (
-            self._check_ot_sector()
-            and self._check_getting_closer(threshold_m=10.0)
+            self._nearest_obstacle(is_static=False) is not None
+            and self._check_ot_sector()
+            and self._check_getting_closer(threshold_m=10.0, is_static=False)
             and self._check_latest_wpnts(self.avoidance_wpnts, self.cur_avoidance_wpnts)
             and self._check_free_frenet(self.cur_avoidance_wpnts)
         ):
@@ -1149,6 +1159,15 @@ class StateMachine(Node):
             return True
         else:
             return False
+
+    def _check_preferred_overtaking_mode(self) -> bool:
+        """Try the planner matching the nearest obstacle before the fallback."""
+        nearest = self._nearest_obstacle()
+        if nearest is None:
+            return False
+        if nearest.is_static:
+            return self._check_static_overtaking_mode() or self._check_overtaking_mode()
+        return self._check_overtaking_mode() or self._check_static_overtaking_mode()
 
     def _static_path_available(self) -> bool:
         """Static-only replacement for _check_latest_wpnts(), used as the OVERTAKE
@@ -1187,6 +1206,8 @@ class StateMachine(Node):
         return True
 
     def _check_static_overtaking_mode(self) -> bool:
+        if self._nearest_obstacle(is_static=True) is None:
+            return False
         path_available = self._static_path_available()
         path_safe = self._check_free_frenet(self.cur_static_avoidance_wpnts) if path_available else False
         on_spline = self._check_on_spline(self.cur_static_avoidance_wpnts)
@@ -1757,16 +1778,30 @@ class StateMachine(Node):
         # TRAILING must NOT hijack the src to OVERTAKE here: overtaking is gated by the
         # OVERTAKE state (sector/getting_closer/free_frenet). Pulling the raw avoidance
         # trajectory into local_wpnts while merely trailing would steer the car onto an
-        # un-committed OT line -- exactly what the OT-blended recovery path exists to
-        # avoid. Keep the src the transition chose (GB/RECOVERY); only pick the trailing
-        # target (the farthest-ahead obstacle) off that same source.
+        # un-committed OT line. Keep the target stable too: otherwise each free check
+        # can replace a dynamic leading car with a static obstacle for one frame and
+        # make the controller alternate between PID and static-crawl policies.
         if local_wpnts_src == StateType.GB_TRACK and self.cur_gb_wpnts.closest_target is not None:
-            return [self.cur_gb_wpnts.closest_target], local_wpnts_src
+            candidate = self.cur_gb_wpnts.closest_target
+        elif local_wpnts_src == StateType.RECOVERY and self.cur_recovery_wpnts.closest_target is not None:
+            candidate = self.cur_recovery_wpnts.closest_target
+        else:
+            candidate = None
 
-        if local_wpnts_src == StateType.RECOVERY and self.cur_recovery_wpnts.closest_target is not None:
-            return [self.cur_recovery_wpnts.closest_target], local_wpnts_src
+        locked = next((obs for obs in self.cur_obstacles_in_interest
+                       if obs.id == self.trailing_target_id), None)
+        if locked is not None and candidate is not None:
+            locked_gap = (locked.s_center - self.cur_s) % self.track_length
+            candidate_gap = (candidate.s_center - self.cur_s) % self.track_length
+            # The new threat wins immediately once it has a meaningful gap advantage;
+            # small detector/planner fluctuations retain the existing target.
+            if candidate.id != locked.id and candidate_gap + self.trailing_target_switch_margin_m >= locked_gap:
+                candidate = locked
+        elif locked is not None:
+            candidate = locked
 
-        return [], local_wpnts_src
+        self.trailing_target_id = None if candidate is None else candidate.id
+        return ([] if candidate is None else [candidate]), local_wpnts_src
 
     def check_ot_cloest_target(self):
         if self.gb_closest_target is not None and self.ot_closest_target is not None and \
@@ -1791,6 +1826,7 @@ class StateMachine(Node):
         keys = ["lateral_width_gb_m", "lateral_width_ot_m", "overtaking_ttl_sec",
                 "splini_hyst_timer_sec", "splini_ttl", "pred_splini_ttl",
                 "emergency_break_horizon", "trailing_speed_scale", "trailing_min_speed_mps",
+                "trailing_target_switch_margin_m",
                 "ftg_speed_mps", "ftg_timer_sec",
                 "ftg_active", "force_GBTRACK"]
         try:
@@ -1899,6 +1935,7 @@ class StateMachine(Node):
                 self.get_farthest_target(self.local_wpnts_src)
         else:
             self.behavior_strategy.trailing_targets = []
+            self.trailing_target_id = None
 
         self.behavior_strategy.overtaking_targets = self.get_overtaking_target()
 
