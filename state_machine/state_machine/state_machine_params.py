@@ -32,6 +32,7 @@ class StateMachineParams:
         "emergency_break_horizon",
         "trailing_speed_scale",
         "trailing_min_speed_mps",
+        "trailing_target_switch_margin_m",
         "ftg_speed_mps",
         "ftg_timer_sec",
         "gb_ego_width_m",
@@ -176,6 +177,16 @@ class StateMachineParams:
             ),
         )
         self.trailing_min_speed_mps: float = node.get_parameter("trailing_min_speed_mps").value
+
+        self._declare(
+            "trailing_target_switch_margin_m", 0.5,
+            ParameterDescriptor(
+                description="Required gap advantage before TRAILING changes obstacle target [m]",
+                type=ParameterType.PARAMETER_DOUBLE,
+                floating_point_range=[FloatingPointRange(from_value=0.0, to_value=3.0, step=0.1)],
+            ),
+        )
+        self.trailing_target_switch_margin_m: float = node.get_parameter("trailing_target_switch_margin_m").value
 
         # Lower bound on the ego-vs-opponent closing speed used to turn gap into a
         # time-to-pass (ttc) when slicing the opponent prediction in _check_free_frenet.

@@ -47,6 +47,7 @@ class Controller:
                 trailing_i_gain,
                 trailing_d_gain,
                 blind_trailing_speed,
+                trailing_fixed_speed_mps,
                 static_min_standoff_m,
                 static_resume_hysteresis_m,
                 static_crawl_speed_mps,
@@ -107,6 +108,7 @@ class Controller:
         self.trailing_i_gain = trailing_i_gain
         self.trailing_d_gain = trailing_d_gain
         self.blind_trailing_speed = blind_trailing_speed
+        self.trailing_fixed_speed_mps = trailing_fixed_speed_mps
         self.static_min_standoff_m = static_min_standoff_m
         self.static_resume_hysteresis_m = static_resume_hysteresis_m
         self.static_crawl_speed_mps = static_crawl_speed_mps
@@ -468,6 +470,17 @@ class Controller:
 
         self.gap_error = self.gap_should - self.gap_actual
         self.v_diff = self.position_in_map_frenet[2] - self.opponent[2]
+
+        # Dynamic trailing is a constant cruise policy, not speed matching.  The
+        # former PID was always referenced to opponent[2], so measurement noise in
+        # the opponent velocity made the ego repeatedly accelerate and decelerate.
+        # Keep its fixed command until the desired time-gap is reached; from there
+        # the existing PID remains a safety-only braking override.  Static targets
+        # deliberately retain their crawl/standoff policy below.
+        if not self.opponent[3] and self.gap_actual > self.gap_should:
+            self.i_gap = 0
+            return min(self.trailing_fixed_speed_mps, global_speed)
+
         self.i_gap = np.clip(self.i_gap + self.gap_error/self.loop_rate, -10, 10)
 
         p_value = self.gap_error * self.trailing_p_gain

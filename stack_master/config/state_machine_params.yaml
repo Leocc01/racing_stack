@@ -36,6 +36,7 @@ state_machine:
     # [m/s] Floor under trailing_speed_scale * raceline_speed (tight corners have a
     # low raceline speed already; don't let the cap crawl toward 0 there).
     trailing_min_speed_mps: 1.0
+    trailing_target_switch_margin_m: 0.5
     ftg_speed_mps: 0.1
     ftg_timer_sec: 3.0
     ftg_active: false

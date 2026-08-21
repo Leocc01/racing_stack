@@ -21,6 +21,7 @@ from filterpy.kalman import ExtendedKalmanFilter as EKF
 from frenet_conversion.frenet_converter import FrenetConverter
 from nav_msgs.msg import Odometry
 from scipy.linalg import block_diag
+from scipy.optimize import linear_sum_assignment
 from visualization_msgs.msg import Marker, MarkerArray
 from transforms3d.euler import quat2euler
 
@@ -194,6 +195,11 @@ class ObstacleSD:
     ttl = None
     min_std = None
     max_std = None
+    static_size_m = 0.50
+    static_size_sigma_m = 0.12
+    size_match_weight = 0.30
+    static_match_max_dist = 0.35
+    dynamic_confirm_frames = 3
 
     def __init__(self, id, s_meas, d_meas, lap, size, isVisible):
         """
@@ -212,6 +218,9 @@ class ObstacleSD:
         self.current_lap = lap
         self.staticFlag = None
         self.size = size
+        self.size_ema = float(size)
+        self.static_size_score = 0.5
+        self.dynamic_count = 0
         self.nb_detection = 0
         self.isVisible = isVisible
 
@@ -258,12 +267,25 @@ class ObstacleSD:
         if self.nb_meas > ObstacleSD.min_nb_meas:
             std_s = self.std_s(track_length)
             std_d = self.std_d()
+            size_error = self.size_ema - ObstacleSD.static_size_m
+            self.static_size_score = math.exp(
+                -0.5 * (size_error / max(ObstacleSD.static_size_sigma_m, 1e-3)) ** 2
+            )
             # --- create a voting system so that the outliers don't affect much the result ---
             if (std_s < ObstacleSD.min_std and std_d < ObstacleSD.min_std):
-                self.static_count = self.static_count + 1
+                # Soft size evidence: a mismatch reduces the static vote but never
+                # hard-labels one noisy/merged LiDAR frame as dynamic.
+                self.static_count = self.static_count + self.static_size_score
+                self.dynamic_count = 0
             # --- assert for sure that an obstacle is dynamic and not static ---
             elif (std_s > ObstacleSD.max_std or std_d > ObstacleSD.max_std):
-                self.static_count = 0
+                # A single association jump (common when nearby static objects
+                # merge) must not immediately flip a stable static track.
+                self.dynamic_count += 1
+                if self.dynamic_count >= ObstacleSD.dynamic_confirm_frames:
+                    self.static_count = 0
+            else:
+                self.dynamic_count = 0
             self.total_count = self.total_count + 1
             self.staticFlag = self.static_count/self.total_count >= 0.5
 
@@ -354,6 +376,11 @@ class StaticDynamic(Node):
         self.max_std = self._get_param("max_std")
         self.min_std = self._get_param("min_std")
         self.min_nb_meas = self._get_param("min_nb_meas")
+        self.static_obstacle_size_m = self._get_param("static_obstacle_size_m")
+        self.static_size_sigma_m = self._get_param("static_size_sigma_m")
+        self.size_match_weight = self._get_param("size_match_weight")
+        self.static_match_max_dist = self._get_param("static_match_max_dist")
+        self.dynamic_confirm_frames = self._get_param("dynamic_confirm_frames")
         self.noMemoryMode = self._get_param("noMemoryMode")
         self.debug_mode = self._get_param("debug_mode")
         self.publish_static = self._get_param("publish_static")
@@ -370,6 +397,10 @@ class StaticDynamic(Node):
         ObstacleSD.min_nb_meas = self.min_nb_meas
         ObstacleSD.min_std = self.min_std
         ObstacleSD.max_std = self.max_std
+        ObstacleSD.static_size_m = self.static_obstacle_size_m
+        ObstacleSD.static_size_sigma_m = self.static_size_sigma_m
+        ObstacleSD.size_match_weight = self.size_match_weight
+        ObstacleSD.dynamic_confirm_frames = self.dynamic_confirm_frames
         self.vs_reset = self.vs_reset
 
         # save-back path (ROS1 dynamic_tracker_server wrote both detect + tracking
@@ -421,6 +452,11 @@ class StaticDynamic(Node):
         self.min_std = self._get_param("min_std")
         self.max_std = self._get_param("max_std")
         self.vs_reset = self._get_param("vs_reset")
+        self.static_obstacle_size_m = self._get_param("static_obstacle_size_m")
+        self.static_size_sigma_m = self._get_param("static_size_sigma_m")
+        self.size_match_weight = self._get_param("size_match_weight")
+        self.static_match_max_dist = self._get_param("static_match_max_dist")
+        self.dynamic_confirm_frames = self._get_param("dynamic_confirm_frames")
         self.aggro_multiplier = self._get_param("aggro_multi")
         self.debug_mode = self._get_param("debug_mode")
         self.publish_static = self._get_param("publish_static")
@@ -433,6 +469,10 @@ class StaticDynamic(Node):
         ObstacleSD.min_nb_meas = self.min_nb_meas
         ObstacleSD.min_std = self.min_std
         ObstacleSD.max_std = self.max_std
+        ObstacleSD.static_size_m = self.static_obstacle_size_m
+        ObstacleSD.static_size_sigma_m = self.static_size_sigma_m
+        ObstacleSD.size_match_weight = self.size_match_weight
+        ObstacleSD.dynamic_confirm_frames = self.dynamic_confirm_frames
 
         obstacle_params = [ObstacleSD.ttl, ObstacleSD.min_nb_meas, ObstacleSD.min_std, ObstacleSD.max_std]
         print(f'[Tracking] Dynamic reconf triggered new tracking params: Tracking TTL: {Opponent_state.ttl}, Ratio to glob path: {Opponent_state.ratio_to_glob_path}\n'
@@ -471,6 +511,11 @@ class StaticDynamic(Node):
                 'max_std': float(self.max_std),
                 'min_std': float(self.min_std),
                 'min_nb_meas': int(self.min_nb_meas),
+                'static_obstacle_size_m': float(self.static_obstacle_size_m),
+                'static_size_sigma_m': float(self.static_size_sigma_m),
+                'size_match_weight': float(self.size_match_weight),
+                'static_match_max_dist': float(self.static_match_max_dist),
+                'dynamic_confirm_frames': int(self.dynamic_confirm_frames),
                 'noMemoryMode': bool(self.noMemoryMode),
                 'debug_mode': bool(self.debug_mode),
                 'publish_static': bool(self.publish_static),
@@ -567,7 +612,14 @@ class StaticDynamic(Node):
             obstacle_position = [obstacle.mean[0], obstacle.mean[1]]
         potential_obs, dists = self.get_closest_pos(max_dist, obstacle_position, meas_obstacles_copy)
         if (len(dists) > 0):
-            min_idx = np.argmin(dists)
+            min_dist = min(dists)
+            near = [i for i, dist in enumerate(dists) if dist <= min_dist + 0.15]
+            costs = [
+                dists[i] + ObstacleSD.size_match_weight *
+                abs(float(potential_obs[i].size) - float(obstacle.size_ema))
+                for i in near
+            ]
+            min_idx = near[int(np.argmin(costs))]
             return True, potential_obs[min_idx]
 
         # maybe kalman was wrong, the obstacles can't just be gone
@@ -575,10 +627,71 @@ class StaticDynamic(Node):
             obstacle_position = [obstacle.mean[0], obstacle.mean[1]]
             potential_obs, dists = self.get_closest_pos(max_dist, obstacle_position, meas_obstacles_copy)
             if (len(dists) > 0):
-                min_idx = np.argmin(dists)
+                min_dist = min(dists)
+                near = [i for i, dist in enumerate(dists) if dist <= min_dist + 0.15]
+                costs = [
+                    dists[i] + ObstacleSD.size_match_weight *
+                    abs(float(potential_obs[i].size) - float(obstacle.size_ema))
+                    for i in near
+                ]
+                min_idx = near[int(np.argmin(costs))]
                 return True, potential_obs[min_idx]
 
         return False, None
+
+    def associate_measurements(self, tracks, measurements):
+        """Associate a frame globally, one measurement per track.
+
+        Position remains the gate and dominant cost. Static tracks use a tighter
+        gate so nearby fixed obstacles cannot swap IDs through the old 0.5 m
+        neighbourhood; size is only a small tie-breaker inside that gate.
+        """
+        if not tracks or not measurements:
+            return {}, set()
+
+        invalid = 1e6
+        costs = np.full((len(tracks), len(measurements)), invalid, dtype=float)
+        for ti, track in enumerate(tracks):
+            if track.staticFlag is False and track.dynamic_state.isInitialised:
+                position = [
+                    track.dynamic_state.dynamic_kf.x[0] % self.track_length,
+                    track.dynamic_state.dynamic_kf.x[2],
+                ]
+                gate = self.max_dist * self.aggro_multiplier
+            elif track.staticFlag is True:
+                position = track.mean
+                gate = self.static_match_max_dist
+            else:
+                position = track.mean
+                gate = self.max_dist
+
+            def fill_costs(reference_position, reference_gate):
+                for mi, measurement in enumerate(measurements):
+                    ds = normalize_s(reference_position[0] - measurement.s_center, self.track_length)
+                    dd = reference_position[1] - measurement.d_center
+                    distance = math.hypot(ds, dd)
+                    if distance <= reference_gate:
+                        size_cost = ObstacleSD.size_match_weight * abs(
+                            float(measurement.size) - float(track.size_ema)
+                        )
+                        costs[ti, mi] = min(
+                            costs[ti, mi], distance + size_cost
+                        )
+
+            fill_costs(position, gate)
+            # Preserve the old dynamic-track fallback when the Kalman prediction
+            # briefly jumps: retry the measured mean without relaxing the gate.
+            if track.staticFlag is False and not np.any(costs[ti] < invalid):
+                fill_costs(track.mean, self.max_dist * self.aggro_multiplier)
+
+        row_idx, col_idx = linear_sum_assignment(costs)
+        matches = {}
+        matched_measurements = set()
+        for ti, mi in zip(row_idx, col_idx):
+            if costs[ti, mi] < invalid:
+                matches[id(tracks[ti])] = measurements[mi]
+                matched_measurements.add(mi)
+        return matches, matched_measurements
 
     def angle_to_obs(self, vec_to_obstacle: np.array, car_orientation: np.array) -> float:
         norm_vec_to_obs = vec_to_obstacle/np.linalg.norm(vec_to_obstacle)
@@ -610,6 +723,7 @@ class StaticDynamic(Node):
         tracked_obstacle.isVisible = True
         tracked_obstacle.current_lap = self.current_lap
         tracked_obstacle.size = meas_obstacle.size
+        tracked_obstacle.size_ema = 0.8 * tracked_obstacle.size_ema + 0.2 * float(meas_obstacle.size)
         tracked_obstacle.isStatic(self.track_length)
         tracked_obstacle.ttl = ObstacleSD.ttl
 
@@ -695,9 +809,17 @@ class StaticDynamic(Node):
         self.lap_update(car_s_copy)
         removal_list = []
         num_dyn_obs = 0
-        for tracked_obstacle in self.tracked_obstacles:
+        # Match all existing tracks against the frame together. The previous
+        # greedy, track-order-dependent remove() loop could exchange IDs when
+        # same-sized static obstacles were within the 0.5 m gate.
+        tracks_snapshot = list(self.tracked_obstacles)
+        matches, matched_measurements = self.associate_measurements(
+            tracks_snapshot, meas_obstacles_copy
+        )
+        for tracked_obstacle in tracks_snapshot:
             # --- verify if the obstacle is tracked by position and update the associated obstacle ---
-            isTracked, meas_obstacle = self.verify_position(tracked_obstacle, meas_obstacles_copy)
+            meas_obstacle = matches.get(id(tracked_obstacle))
+            isTracked = meas_obstacle is not None
 
             if isTracked:
                 tracked_obstacle = self.update_tracked_obstacle(tracked_obstacle, meas_obstacle)
@@ -709,6 +831,7 @@ class StaticDynamic(Node):
                             tracked_obstacle.dynamic_state.isInitialised = False
                             tracked_obstacle.staticFlag = True
                             tracked_obstacle.static_count = 0
+                            tracked_obstacle.dynamic_count = 0
                             tracked_obstacle.total_count = 0
                             tracked_obstacle.nb_meas = 0
                         else:
@@ -722,8 +845,6 @@ class StaticDynamic(Node):
                     self.tracked_obstacles.remove(tracked_obstacle)
                     self.tracked_obstacles.insert(num_dyn_obs, tracked_obstacle)
                     num_dyn_obs += 1
-
-                meas_obstacles_copy.remove(meas_obstacle)
 
             else:
                 # --- remove obstacle with dead ttl ---
@@ -768,7 +889,9 @@ class StaticDynamic(Node):
         for el in removal_list:
             self.tracked_obstacles.remove(el)
 
-        for meas_obstacle in meas_obstacles_copy:
+        for mi, meas_obstacle in enumerate(meas_obstacles_copy):
+            if mi in matched_measurements:
+                continue
             # update the init function and append a new obstacle to the new_obstacles
             self.tracked_obstacles.append(ObstacleSD(
                 id=self.current_id,
